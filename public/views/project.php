@@ -35,27 +35,112 @@
             </div>
         </div>
         <div class="profile">
+            <div class="circle">
                 <span class="profile-icon" style="color:white;">
-                    <i class="fas fa-user-tie fa-3x"></i>
+                    <i class="fas fa-user-tie fa-2x"></i>
                 </span>
+            </div>
             <div class="name">
                 Bartek
             </div>
         </div>
-        <div class="settings">
-            <button name="settings-button">
-                    <span class="settings-icon" style="color: white;">
-                        <i class="fas fa-cog fa-3x"></i>                
-                    </span>
-            </button>
-        </div>
+        <button name="settings-button">
+            <span class="settings-icon" style="color: white;">
+                <i class="fas fa-cog fa-3x"></i>
+            </span>
+        </button>
     </header>
     <main>
         <section class="project">
             <div class="filters">
                 <div class="filters-bar">
-                    <h1>Znaleziono 10 wyników</h1>
+                    <div class="info-bar">
+                        <h1>Znaleziono 10 wyników</h1>
+                    </div>
                     <div class="filters-bar-section">
+                        <h1>Filtry</h1>
+                        <h3>Jedzenie:</h3>
+                        <label class="container">
+                            Wedliny
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Pieczywo
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Sery
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Dania
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Przetwory
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Słodycze
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Warzywa
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <h3>Napoje</h3>
+                        <label class="container">
+                            Soki
+                            <input type="checkbox" checked="checked">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Piwo
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label><label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <label class="container">
+                            Wino
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+
 
                     </div>
                 </div>
