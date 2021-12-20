@@ -8,7 +8,7 @@ body {
     font-size: 12px;
     width: 100vw;
     height: 100vh;
-    background: transparent linear-gradient(180deg, #FDCA40 0%, #F79824 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #FDCA40 0%, #F79824 100%) 0 0 no-repeat padding-box;
 }
 
 .base-container {
@@ -24,7 +24,7 @@ header{
     flex-direction: row;
     justify-content: flex-start;
 
-    background: #33A1FD 0% 0% no-repeat padding-box;
+    background: #33A1FD 0 0 no-repeat padding-box;
 }
 
 .bars{
@@ -114,7 +114,7 @@ button[name="settings-button"]{
     width: 10vw;
     height: 15vh;
 
-    background: #2176FF 0% 0% no-repeat padding-box;
+    background: #2176FF 0 0 no-repeat padding-box;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     border: black inset thin;
 }
@@ -144,7 +144,7 @@ section.project{
     align-content: center;
     flex-direction: column;
 
-    background: #33A1FD 0% 0% no-repeat padding-box;
+    background: #33A1FD 0 0 no-repeat padding-box;
     border: 1px solid #707070;
     border-radius: 2em;
 }
@@ -272,7 +272,7 @@ section.project{
     display: flex;
     flex-direction: column;
 
-    background: #31393C 0% 0% no-repeat padding-box;
+    background: #31393C 0 0 no-repeat padding-box;
     border: 1px solid #5E5E5E;
     border-radius: 2em;
 }
@@ -290,7 +290,7 @@ img[src="public/img/first.svg"]{
     width: 36vw;
     height: 16vh;
 
-    border-radius: 2em 2em 0em 0em;
+    border-radius: 2em 2em 0 0;
 }
 
 .informations{
@@ -316,13 +316,18 @@ img[src="public/img/first.svg"]{
 
 .text {
    color: white;
-    
-    margin: 1em;
+
+    overflow: scroll;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    margin-right: 1em;
     text-align: left;
     font-size: 1.5em;
 }
 
-
+.text::-webkit-scrollbar{
+    display: none;
+}
 
 
 .mapa{
@@ -358,9 +363,84 @@ button[name='add-pin']{
     z-index: 1;
 }
 
+#map > .local{
+    width: 3vw;
+    height: 3vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1em;
+}
+
+button[name='localization'] {
+    width: 3vw;
+    height: 3vw;
+
+    position: relative;
+    top: 1em;
+    left: 1em;
+    z-index: 1;
+}
+
+
+.pin-add-div{
+    /*display: none;*/
+    width: 40vw;
+    height: 70vh;
+
+    background: #114B5F 0 0 no-repeat padding-box;
+    z-index: 2;
+    position: absolute;
+    top: 15vh;
+    right: 10vw;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+button[name='close-button'] {
+    width: 4vw;
+    height: 4vw;
+    background: #31393C 0 0 no-repeat padding-box;
+    position: absolute;
+    right: 2vw;
+    top: 2vh;
+}
+
+
+.photo-div{
+    width: 40vw;
+    height: 35vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo{
+    width: 15vw;
+    height: 15vw;
+
+    background: #31393C 0 0 no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 39px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+.photo-icon{
+
+}
+
 .bottom-bar {
     display: none;
 }
+
 
 
 
@@ -383,7 +463,7 @@ button[name='add-pin']{
         flex-direction: row;
         justify-content: space-between;
     
-        background: #33A1FD 0% 0% no-repeat padding-box;
+        background: #33A1FD 0 0 no-repeat padding-box;
     }
 
     .bars {
@@ -400,7 +480,7 @@ button[name='add-pin']{
         width: 25vw;
         height: 10vh;
 
-        background: #2176FF 0% 0% no-repeat padding-box;
+        background: #2176FF 0 0 no-repeat padding-box;
 
         box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
         border: 0;
