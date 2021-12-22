@@ -11,13 +11,13 @@
     <title>Document</title>
 </head>
 <body>
-        <div class="base-container">
+    <div class="base-container">
         <header>
             <div class="bars">
                 <button name="bars-button">
-                        <span class="bars-icon" style="color: white;">
-                            <i class="fas fa-bars fa-2x"></i>
-                        </span>
+                    <span class="bars-icon" style="color: white;">
+                        <i class="fas fa-bars fa-2x"></i>
+                    </span>
                 </button>
             </div>
             <div class="logo">
@@ -25,13 +25,13 @@
             </div>
             <div class="search-town">
                 <div class="search-wrap">
-                        <span class="wysz" style="color: white;">
-                            <i class="fas fa-search"></i>
-                        </span>
+                    <span class="wysz" style="color: white;">
+                        <i class="fas fa-search"></i>
+                    </span>
                     <input name="search" type="text" placeholder="Szukaj miejsca">
                     <span class="exit" style="color: white;">
                             <i class="fas fa-times-circle"></i>
-                        </span>
+                    </span>
                 </div>
             </div>
             <div class="profile">
@@ -163,7 +163,7 @@
                 <div class="info projects">
                     <div id="project-1">
                         <div class="image">
-                            <img src="public/img/first.svg">
+                            <img src="public/img/first.svg" alt="">
                         </div>
                         <div class="informations">
                             <h1>Robert Mazurek</h1>
@@ -182,7 +182,7 @@
 
                     <div id="project-1">
                         <div class="image">
-                            <img src="public/img/first.svg">
+                            <img src="public/img/first.svg" alt="">
                         </div>
                         <div class="informations">
                             <h1>Robert Mazurek</h1>
@@ -201,7 +201,7 @@
 
                     <div id="project-1">
                         <div class="image">
-                            <img src="public/img/first.svg">
+                            <img src="public/img/first.svg" alt="">
                         </div>
                         <div class="informations">
                             <h1>Robert Mazurek</h1>
@@ -241,21 +241,88 @@
                         </button>
                         <div class="photo">
                             <div class="photo-icon">
-                                <i class="fas fa-user-edit"></i>
+                                <span class="photo-color" style="color: white">
+                                    <i class="fas fa-user-edit fa-5x"></i>
+                                </span>
                             </div>
+                            <h1>Bartosz Matras</h1>
                         </div>
                     </div>
                     <div class="data">
-
+                        <div class="data-flex">
+                            <div class="data-first">
+                                <div class="data-name">
+                                    <p>Name: <br>
+                                        Bartosz
+                                    </p>
+                                    <i class="far fa-edit fa-1x"></i>
+                                </div>
+                                <div class="data-surname">
+                                    <p>Nazwisko: <br>
+                                        Matras
+                                    </p>
+                                    <i class="far fa-edit fa-1x"></i>
+                                </div>
+                                <div class="data-email">
+                                    <p>email: <br>
+                                        bartosz.matras38@gmail.com
+                                    </p>
+                                    <i class="far fa-edit fa-1x"></i>
+                                </div>
+                            </div>
+                            <div class="data-second">
+                                <div class="data-adress">
+                                    <p>Adres: <br>
+                                        Krakow 12-345 <br>
+                                        ul. Krakowiaka 18b
+                                    </p>
+                                    <i class="far fa-edit fa-1x"></i>
+                                </div>
+                                <div class="data-phone">
+                                    <p>Numer telefonu: <br>
+                                        123 456 789
+                                    </p>
+                                    <i class="far fa-edit fa-1x"></i>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="bottom-bar">
 
                 </div>
+
+                <div class="options">
+                    <div class="alert">
+                        <div class="alert-info">
+                            <div class="alert-info1">
+                                <p> Powiadomienia </p>
+                            </div>
+                            <div class="alert-info2">
+                                <input type="checkbox" class="checkbox">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="help">
+
+                    </div>
+                    <div class="more">
+
+                    </div>
+                    <div class="other-app">
+
+                    </div>
+                    <button name="logout">
+
+                    </button>
+                    <div class="producent-info">
+                        <p>Train 1.0.1 <br> Stworzono w Kraków</p>
+                    </div>
+                </div>
             </section>
 
         </main>
-        </div>
+    </div>
     </body>
 </html>
