@@ -25,13 +25,13 @@
             </div>
             <div class="search-town">
                 <div class="search-wrap">
-                    <span class="wysz" style="color: white;">
-                        <i class="fas fa-search"></i>
-                    </span>
+                    <button class="wysz">
+                        <i class="fas fa-search fa-2x"></i>
+                    </button>
                     <input name="search" type="text" placeholder="Szukaj miejsca">
-                    <span class="exit" style="color: white;">
-                            <i class="fas fa-times-circle"></i>
-                    </span>
+                    <button class="exit">
+                        <i class="fas fa-times-circle fa-2x"></i>
+                    </button>
                 </div>
             </div>
             <div class="profile">
@@ -255,19 +255,25 @@
                                     <p>Name: <br>
                                         Bartosz
                                     </p>
-                                    <i class="far fa-edit fa-1x"></i>
+                                    <button name="edit-data">
+                                        <i class="far fa-edit fa-2x"></i>
+                                    </button>
                                 </div>
                                 <div class="data-surname">
                                     <p>Nazwisko: <br>
                                         Matras
                                     </p>
-                                    <i class="far fa-edit fa-1x"></i>
+                                    <button name="edit-data">
+                                        <i class="far fa-edit fa-2x"></i>
+                                    </button>
                                 </div>
                                 <div class="data-email">
                                     <p>email: <br>
                                         bartosz.matras38@gmail.com
                                     </p>
-                                    <i class="far fa-edit fa-1x"></i>
+                                    <button name="edit-data">
+                                        <i class="far fa-edit fa-2x"></i>
+                                    </button>
                                 </div>
                             </div>
                             <div class="data-second">
@@ -276,13 +282,17 @@
                                         Krakow 12-345 <br>
                                         ul. Krakowiaka 18b
                                     </p>
-                                    <i class="far fa-edit fa-1x"></i>
+                                    <button name="edit-data">
+                                        <i class="far fa-edit fa-2x"></i>
+                                    </button>
                                 </div>
                                 <div class="data-phone">
                                     <p>Numer telefonu: <br>
                                         123 456 789
                                     </p>
-                                    <i class="far fa-edit fa-1x"></i>
+                                    <button name="edit-data">
+                                        <i class="far fa-edit fa-2x"></i>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -300,28 +310,46 @@
                                 <p> Powiadomienia </p>
                             </div>
                             <div class="alert-info2">
-                                <input type="checkbox" class="checkbox">
+                                <button class="buttonOn">
+                                    <p>On</p>
+                                </button>
+                                <button class="buttonOff">
+                                    <p>Off</p>
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="help">
-
+                        <button name="buttonHelp">
+                            <p>Pomoc</p>
+                        </button>
                     </div>
                     <div class="more">
 
                     </div>
                     <div class="other-app">
-
+                        <button name="buttonFb">
+                            <i class="fab fa-facebook-f fa-2x"></i>
+                        </button>
+                        <button name="buttonMess">
+                            <i class="fab fa-facebook-messenger fa-2x"></i>                        </button>
+                        <button name="buttonIg">
+                            <i class="fab fa-instagram fa-2x"></i>
+                        </button>
+                        <button name="buttonTwitter">
+                            <i class="fab fa-twitter fa-2x"></i>
+                        </button>
                     </div>
-                    <button name="logout">
-
-                    </button>
+                    <div class="logout">
+                        <button name="buttonLogout">
+                            <p>Wyloguj.</p>
+                        </button>
+                    </div>
                     <div class="producent-info">
                         <p>Train 1.0.1 <br> Stworzono w Kraków</p>
                     </div>
                 </div>
             </section>
-
         </main>
     </div>
     </body>

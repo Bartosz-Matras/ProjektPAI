@@ -58,8 +58,11 @@ img[src="public/img/logo.svg"] {
     font-size: 2em;
 }
 
-span[class="wysz"]{
+button[class="wysz"]{
+    background: #33A1FD 0 0 no-repeat padding-box;
     width: 3vw;
+    color: white;
+    border: none;
 }
 
 input[name="search"]{
@@ -76,11 +79,14 @@ input[name="search"]{
     color: white;
 }
 
-span[class="exit"]{
+button[class="exit"]{
     width: 3vw;
 
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    border: none;
+    background: #33A1FD 0 0 no-repeat padding-box;
+    color: white;
 }
 
 .profile{
@@ -116,7 +122,7 @@ button[name="settings-button"]{
 
     background: #2176FF 0 0 no-repeat padding-box;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    border: black inset thin;
+    border: none;
 }
 
 
@@ -400,7 +406,6 @@ button[name='localization'] {
 
 
 button[name="close-button"] {
-    display: none;
     width: 4vw;
     height: 4vw;
     background: #31393C 0 0 no-repeat padding-box;
@@ -480,14 +485,20 @@ button[name="close-button"] {
     justify-content: space-around;
 }
 
+button[name="edit-data"]{
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    color: white;
+}
+
 .data-name{
     width: 16vw;
     height: 11vh;
 
     font-size: 1.5em;
     margin-left: 1em;
-    color: white;
     display: flex;
+    color: white;
     align-items: center;
     justify-content: space-between;
     border-bottom: solid black;
@@ -582,6 +593,7 @@ button[name="close-button"] {
     display: none;
 }
 
+
 .options{
     /*display: none;*/
     width: 18vw;
@@ -599,8 +611,8 @@ button[name="close-button"] {
 }
 
 .alert{
-    height: 15vh;
-    background: black;
+    height: 20vh;
+    background: #33A1FD 0 0 no-repeat padding-box;
 
     display: flex;
     justify-content: center;
@@ -610,24 +622,154 @@ button[name="close-button"] {
 .alert-info{
     width: 16vw;
     height: 12vh;
-    background: gold;
+    background: #2176FF 0 0 no-repeat padding-box;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    border-radius: 2em;
 }
 
 .alert-info1{
     height: 6vh;
-    font-size: 2em;
+    font-size: 3em;
+    font-weight: bold;
+
 }
 
 
 .alert-info2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[class="buttonOn"]{
+    width: 3vw;
+    height: 3vh;
+    border-radius: 1em 0 0 1em;
+    font-weight: bold;
+
+    background: #33A1FD 0 0 no-repeat padding-box;
+    border: none;
+}
+
+button[class="buttonOn"]:hover{
+    background: #DCF2FF 0 0 no-repeat padding-box;
+}
+
+
+button[class="buttonOff"]{
+    width: 3vw;
+    height: 3vh;
+    border-radius: 0 1em 1em 0;
+    font-weight: bold;
+
+    background: #33A1FD 0 0 no-repeat padding-box;
+    border: none;
+}
+
+button[class="buttonOff"]:hover{
+    background: #DCF2FF 0 0 no-repeat padding-box;
+}
+
+
+.help{
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[name="buttonHelp"]{
+    width: 16vw;
+    height: 5vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2176FF 0 0 no-repeat padding-box;
+    border-radius: 1em;
+    border: none;
+    color: black;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.more{
+    height: 40vh;
+}
+
+.other-app{
+    height: 10vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
+
+button[name="buttonFb"]{
+    width: 4vw;
+    height: 5vh;
+    border: none;
+    background: #2176FF 0 0 no-repeat padding-box;
+    border-radius: 2em 0 0 2em;
+}
+
+button[name="buttonMess"]{
+    width: 4vw;
+    height: 5vh;
+    border: none;
+    background: #2176FF 0 0 no-repeat padding-box;
+}
+
+button[name="buttonIg"]{
+    width: 4vw;
+    height: 5vh;
+    border: none;
+    background: #2176FF 0 0 no-repeat padding-box;
+}
+
+button[name="buttonTwitter"]{
+    width: 4vw;
+    height: 5vh;
+    border: none;
+    border-radius: 0 2em 2em 0;
+    background: #2176FF 0 0 no-repeat padding-box;
+}
+
+.logout{
+    height: 10vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button[name="buttonLogout"]{
+    width: 16vw;
+    height: 5vh;
+    font-weight: bold;
+    font-size: 2em;
+
+    background: #2176FF 0 0 no-repeat padding-box;
+    border-radius: 2em;
+    border: none;
+}
+
+.producent-info{
+    height: 10vh;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 
 /*@media only screen and (max-device-width: 420px){*/
