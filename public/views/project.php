@@ -234,7 +234,7 @@
                     </div>
                 </div>
 
-                <div class="pin-add-div">
+                <div class="account-div">
                     <div class="photo-div">
                         <button name="close-button">
                             <i class="fas fa-times fa-3x"></i>
@@ -347,6 +347,58 @@
                     </div>
                     <div class="producent-info">
                         <p>Train 1.0.1 <br> Stworzono w Kraków</p>
+                    </div>
+                </div>
+
+                <div class="add-pin-div">
+                    <label for="pin-desc">Dodaj opis:</label>
+                    <textarea id="pin-desc" name="pin-desc" rows="1" cols="1">
+
+                    </textarea>
+                    <button name="upload-photo">
+                        <i class="fas fa-upload"></i>
+                        <p>Upload file</p>
+                    </button>
+                    <div class="buttons-pin">
+                        <button name="button-add">
+                            <p>Dodaj</p>
+                        </button>
+                        <button name="button-cancel">
+                            <p>Anuluj</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="pin-info">
+                    <div class="pin-info-left">
+                        <div class="pin-info-photo">
+
+                        </div>
+                        <div class="pin-info-star">
+                            <i class="fas fa-star s1"></i>
+                            <i class="fas fa-star s2"></i>
+                            <i class="fas fa-star s3"></i>
+                            <i class="fas fa-star s4"></i>
+                            <i class="fas fa-star s5"></i>
+                        </div>
+                        <button name="pin-info-exit">
+                            <i class="fas fa-times fa-3x"></i>
+                        </button>
+                    </div>
+                    <div class="pin-info-right">
+                        <div class="pin-info-h1">
+                            <h1>Robert Mazurek</h1>
+                        </div>
+                        <div class="pin-info-p">
+                            <p> Sprzedam 4 kurczaki z własnej hodowli.
+                                Kurczaki z wolnego wybiegu. Cena: 20zł/szt
+                                Dane kontaktowe: 123 456 789
+                                Robert.mazurek@gmail.com
+                            </p>
+                        </div>
+                        <div class="pin-info-h2">
+                            <h2>ul. Krowoderska 10</h2>
+                        </div>
                     </div>
                 </div>
             </section>
