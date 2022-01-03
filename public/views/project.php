@@ -16,13 +16,15 @@
             <div class="bars">
                 <button name="bars-button">
                     <span class="bars-icon" style="color: white;">
-                        <i class="fas fa-bars fa-2x"></i>
+                        <i class="fas fa-bars fa-6x"></i>
                     </span>
                 </button>
             </div>
+
             <div class="logo">
                 <img src="public/img/logo.svg">
             </div>
+
             <div class="search-town">
                 <div class="search-wrap">
                     <button class="wysz">
@@ -34,6 +36,7 @@
                     </button>
                 </div>
             </div>
+
             <div class="profile">
                 <div class="circle">
                     <span class="profile-icon" style="color:white;">
@@ -44,11 +47,19 @@
                     Bartek
                 </div>
             </div>
+
             <button name="settings-button">
                 <span class="settings-icon" style="color: white;">
                     <i class="fas fa-cog fa-3x"></i>
                 </span>
             </button>
+
+            <button name="settings-button-2">
+                <span class="settings-icon" style="color: white;">
+                    <i class="fas fa-cog fa-6x"></i>
+                </span>
+            </button>
+
         </header>
 
         <main>
@@ -219,6 +230,15 @@
                     </div>
                 </div>
 
+                <dic class="search-tool">
+                    <i class="fas fa-map-marker-alt fa-4x"></i>
+                    <input name="search-app" type="text" placeholder="Szukaj miejsca">
+                    <button name="microphone">
+                        <i class="fas fa-microphone fa-4x"></i>
+                    </button>
+
+                </dic>
+
                 <div class="mapa">
                     <div id="map">
                         <div class="pin">
@@ -226,9 +246,19 @@
                                 <i class="fas fa-plus-square fa-3x"></i>
                             </button>
                         </div>
+                        <div class="pin-2">
+                            <button name="add-pin-2">
+                                <i class="fas fa-plus-square fa-5x"></i>
+                            </button>
+                        </div>
                         <div class="local">
                             <button name="localization">
                                 <i class="fas fa-location-arrow fa-2x"></i>
+                            </button>
+                        </div>
+                        <div class="local-2">
+                            <button name="localization-2">
+                                <i class="fas fa-location-arrow fa-5x"></i>
                             </button>
                         </div>
                     </div>
@@ -300,7 +330,65 @@
                 </div>
 
                 <div class="bottom-bar">
-
+                    <button name="scroll">
+                        <i class="fas fa-grip-lines fa-5x"></i>
+                    </button>
+                    <div class="info-projects">
+                        <label for="10 Wyników">
+                            10 Wyników
+                            <i class="fas fa-pizza-slice"></i>
+                        </label>
+                        <div class="info-projects-div">
+                            <div class="project-2">
+                                <div class="project2-photo-name">
+                                    <img src="public/img/photo.svg">
+                                    <div class="project2-name">
+                                        <p>Robert Mazurek</p>
+                                    </div>
+                                </div>
+                                <div class="project2-desc">
+                                    <label for="description">
+                                        Mam na sprzedaż 4 kurczaki z
+                                        <button name="description-more">
+                                            <i class="fas fa-ellipsis-h fa-2x"></i>
+                                        </button>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="project-2">
+                                <div class="project2-photo-name">
+                                    <img src="public/img/photo.svg">
+                                    <div class="project2-name">
+                                        <p>Robert Mazurek</p>
+                                    </div>
+                                </div>
+                                <div class="project2-desc">
+                                    <label for="description">
+                                        Mam na sprzedaż 4 kurczaki z
+                                        <button name="description-more">
+                                            <i class="fas fa-ellipsis-h fa-2x"></i>
+                                        </button>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="project-2">
+                                <div class="project2-photo-name">
+                                    <img src="public/img/photo.svg">
+                                    <div class="project2-name">
+                                        <p>Robert Mazurek</p>
+                                    </div>
+                                </div>
+                                <div class="project2-desc">
+                                    <label for="description">
+                                        Mam na sprzedaż 4 kurczaki z
+                                        <button name="description-more">
+                                            <i class="fas fa-ellipsis-h fa-2x"></i>
+                                        </button>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="options">
@@ -325,7 +413,6 @@
                         </button>
                     </div>
                     <div class="more">
-
                     </div>
                     <div class="other-app">
                         <button name="buttonFb">
@@ -400,6 +487,67 @@
                             <h2>ul. Krowoderska 10</h2>
                         </div>
                     </div>
+                </div>
+
+                <div class="profile2">
+                    <div class="profile2-photo-exit">
+                        <button name="profile2-photo">
+                            <img src="public/img/face.svg">
+                        </button>
+                        <button name="profile2-exit">
+                            <i class="fas fa-times fa-5x"></i>
+                        </button>
+                    </div>
+
+                    <div class="profile2-info">
+
+                        <div class="profile2-info-name">
+                            <p>Name: <br>
+                                Bartosz
+                            </p>
+                            <button name="profile2-edit-data">
+                                <i class="far fa-edit fa-2x"></i>
+                            </button>
+                        </div>
+
+                        <div class="profile2-info-surname">
+                            <p>Name: <br>
+                                Bartosz
+                            </p>
+                            <button name="profile2-edit-data">
+                                <i class="far fa-edit fa-2x"></i>
+                            </button>
+                        </div>
+
+                        <div class="profile2-info-email">
+                            <p>Name: <br>
+                                Bartosz
+                            </p>
+                            <button name="profile2-edit-data">
+                                <i class="far fa-edit fa-2x"></i>
+                            </button>
+                        </div>
+
+                        <div class="profile2-info-adres">
+                            <p>Name: <br>
+                                Bartosz
+                            </p>
+                            <button name="profile2-edit-data">
+                                <i class="far fa-edit fa-2x"></i>
+                            </button>
+                        </div>
+
+                        <div class="profile2-info-phone">
+                            <p>Name: <br>
+                                Bartosz
+                            </p>
+                            <button name="profile2-edit-data">
+                                <i class="far fa-edit fa-2x"></i>
+                            </button>
+                        </div>
+
+                    </div>
+
                 </div>
             </section>
         </main>
