@@ -67,10 +67,10 @@
                 <div class="filters">
                     <div class="filters-bar">
                         <div class="info-bar">
-                            <h1>Znaleziono 10 wyników</h1>
+                            <p>Znaleziono 10 wyników</p>
                         </div>
                         <div class="filters-bar-section">
-                            <h1>Filtry</h1>
+                            <p>Filtry</p>
                             <h3>Jedzenie:</h3>
                             <label class="container">
                                 Wedliny
@@ -107,7 +107,7 @@
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                            <h3>Napoje</h3>
+                            <h3>Napoje:</h3>
                             <label class="container">
                                 Soki
                                 <input type="checkbox" checked="checked">
@@ -142,7 +142,8 @@
                                 Wino
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
-                            </label><label class="container">
+                            </label>
+                            <label class="container">
                                 Wino
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
@@ -171,18 +172,107 @@
                     </div>
                 </div>
 
-                <div class="info projects">
+                <div class="filters2">
+                    <div class="profile2-image">
+                        <img src="public/img/face.svg" alt="">
+                    </div>
+                    <div class="profile2-labelName">
+                        <p>Bartosz</p>
+                    </div>
+                    <button name="profile2Name">
+                        <p>Edytuj profil </p>
+                    </button>
+                    <div class="profile2-filters">
+                        <p>Filtry</p>
+                        <div class="profile2-filters-div">
+                            <h3>Jedzenie:</h3>
+                            <label class="container2">
+                                Wedliny
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Pieczywo
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Sery
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Dania
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Przetwory
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Słodycze
+                                <input type="checkbox" checked="checked">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Warzywa
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <h3>Napoje:</h3>
+                            <label class="container2">
+                                Soki
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Piwo
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Wino
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Wino
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Wino
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Wino
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Wino
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                            <label class="container2">
+                                Wino
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects">
                     <div id="project-1">
                         <div class="image">
                             <img src="public/img/first.svg" alt="">
                         </div>
                         <div class="informations">
                             <h1>Robert Mazurek</h1>
-                            <div class="icon-background">
-                                    <span class="rate-icon" style="color: #FFD500;">
-                                        <i class="fas fa-plus"> 23</i>
-                                    </span>
-                            </div>
                         </div>
                         <div class="text">
                             <p>
@@ -197,11 +287,6 @@
                         </div>
                         <div class="informations">
                             <h1>Robert Mazurek</h1>
-                            <div class="icon-background">
-                                    <span class="rate-icon" style="color: #FFD500;">
-                                        <i class="fas fa-plus"> 23</i>
-                                    </span>
-                            </div>
                         </div>
                         <div class="text">
                             <p>
@@ -216,11 +301,20 @@
                         </div>
                         <div class="informations">
                             <h1>Robert Mazurek</h1>
-                            <div class="icon-background">
-                                    <span class="rate-icon" style="color: #FFD500;">
-                                        <i class="fas fa-plus"> 23</i>
-                                    </span>
-                            </div>
+                        </div>
+                        <div class="text">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="project-1">
+                        <div class="image">
+                            <img src="public/img/first.svg" alt="">
+                        </div>
+                        <div class="informations">
+                            <h1>Robert Mazurek</h1>
                         </div>
                         <div class="text">
                             <p>
@@ -437,6 +531,45 @@
                     </div>
                 </div>
 
+                <div class="options2">
+                    <div class="notification">
+                        <button name="bell">
+                            <i class="fas fa-bell fa-4x"></i>
+                        </button>
+                        <button name="support">
+                            <i class="fas fa-question fa-4x"></i>
+                        </button>
+                        <button name="dark-mode">
+                            <i class="fas fa-moon fa-4x"></i>
+                        </button>
+                    </div>
+                    <div class="break">
+
+                    </div>
+                    <div class="other-app2">
+                        <button name="buttonFb2">
+                            <i class="fab fa-facebook-f fa-4x"></i>
+                        </button>
+                        <button name="buttonMess2">
+                            <i class="fab fa-facebook-messenger fa-4x"></i>
+                        </button>
+                        <button name="buttonInstagram2">
+                            <i class="fab fa-instagram fa-4x"></i>
+                        </button>
+                        <button name="buttonTwitter2">
+                            <i class="fab fa-twitter fa-4x"></i>
+                        </button>
+                    </div>
+                    <div class="logout2">
+                        <button name="buttonLogout2">
+                            <p>Wyloguj.</p>
+                        </button>
+                    </div>
+                    <div class="producent-info2">
+                        <p>Train 1.0.1 <br> Stworzono w Kraków</p>
+                    </div>
+                </div>
+
                 <div class="add-pin-div">
                     <label for="pin-desc">Dodaj opis:</label>
                     <textarea id="pin-desc" name="pin-desc" rows="1" cols="1">
@@ -451,6 +584,25 @@
                             <p>Dodaj</p>
                         </button>
                         <button name="button-cancel">
+                            <p>Anuluj</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="add-pin-div2">
+                    <label for="pin2-desc">Dodaj opis:</label>
+                    <textarea id="pin2-desc" name="pin2-desc" rows="1" cols="1">
+
+                    </textarea>
+                    <button name="upload-photo2">
+                        <i class="fas fa-upload fa-2x"></i>
+                        <p>Upload file</p>
+                    </button>
+                    <div class="buttons-pin2">
+                        <button name="button-add2">
+                            <p>Dodaj</p>
+                        </button>
+                        <button name="button-cancel2">
                             <p>Anuluj</p>
                         </button>
                     </div>
@@ -489,6 +641,41 @@
                     </div>
                 </div>
 
+                <div class="pin-info2">
+                    <div class="pin-info-left2">
+                        <div class="pin-info-photo2">
+
+                        </div>
+                        <div class="pin-info-star2">
+                            <i class="fas fa-star fa-5x s12"></i>
+                            <i class="fas fa-star fa-5x s22"></i>
+                            <i class="fas fa-star fa-5x s32"></i>
+                            <i class="fas fa-star fa-5x s42"></i>
+                            <i class="fas fa-star fa-5x s52"></i>
+                        </div>
+                        <button name="pin-info-exit2">
+                            <i class="fas fa-times fa-7x"></i>
+                        </button>
+                    </div>
+                    <div class="pin-info-right2">
+                        <div class="pin-info-right2-div">
+                            <div class="pin-info2-h1">
+                                <h1>Robert Mazurek</h1>
+                            </div>
+                            <div class="pin-info2-p">
+                                <p> Sprzedam 4 kurczaki z własnej hodowli.
+                                    Kurczaki z wolnego wybiegu. Cena: 20zł/szt
+                                    Dane kontaktowe: 123 456 789
+                                    Robert.mazurek@gmail.com
+                                </p>
+                            </div>
+                            <div class="pin-info2-h2">
+                                <h2>ul. Krowoderska 10</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="profile2">
                     <div class="profile2-photo-exit">
                         <button name="profile2-photo">
@@ -502,47 +689,48 @@
                     <div class="profile2-info">
 
                         <div class="profile2-info-name">
-                            <p>Name: <br>
+                            <p>Imie: <br>
                                 Bartosz
                             </p>
-                            <button name="profile2-edit-data">
-                                <i class="far fa-edit fa-2x"></i>
+                            <button name="profile2-edit-data-name">
+                                <i class="far fa-edit fa-3x"></i>
                             </button>
                         </div>
 
                         <div class="profile2-info-surname">
-                            <p>Name: <br>
-                                Bartosz
+                            <p>Nazwisko: <br>
+                                Matras
                             </p>
-                            <button name="profile2-edit-data">
-                                <i class="far fa-edit fa-2x"></i>
+                            <button name="profile2-edit-data-surname">
+                                <i class="far fa-edit fa-3x"></i>
                             </button>
                         </div>
 
                         <div class="profile2-info-email">
-                            <p>Name: <br>
-                                Bartosz
+                            <p>Email: <br>
+                                bartosz.matras38@gmail.com
                             </p>
-                            <button name="profile2-edit-data">
-                                <i class="far fa-edit fa-2x"></i>
+                            <button name="profile2-edit-data-email">
+                                <i class="far fa-edit fa-3x"></i>
                             </button>
                         </div>
 
                         <div class="profile2-info-adres">
-                            <p>Name: <br>
-                                Bartosz
+                            <p>Adres: <br>
+                                Krakow 12-345 <br>
+                                ul. Krakowska 18b
                             </p>
-                            <button name="profile2-edit-data">
-                                <i class="far fa-edit fa-2x"></i>
+                            <button name="profile2-edit-data-adres">
+                                <i class="far fa-edit fa-3x"></i>
                             </button>
                         </div>
 
                         <div class="profile2-info-phone">
-                            <p>Name: <br>
-                                Bartosz
+                            <p>Numer telefonu: <br>
+                                123 456 789
                             </p>
-                            <button name="profile2-edit-data">
-                                <i class="far fa-edit fa-2x"></i>
+                            <button name="profile2-edit-data-phone">
+                                <i class="far fa-edit fa-3x"></i>
                             </button>
                         </div>
 

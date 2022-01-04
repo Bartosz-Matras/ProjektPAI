@@ -165,14 +165,20 @@ section.project{
 
 .info-bar{
     width: 28vw;
-    height: 10vh;
-    font-size: 1.5em;
+    height: 14vh;
     color: white;
     display: flex;
-    margin-left: 2em;
+    margin-left: 2vw;
     align-items: center;
 }
 
+.info-bar > p{
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: "Segoe Print", serif;
+}
 
 .filters-bar-section {
     width: 20vw;
@@ -182,30 +188,37 @@ section.project{
     color: white;
     display: flex;
     flex-direction: column;
-    margin-left: 2em;
+    margin-left: 2vw;
 }
 
 .filters-bar-section::-webkit-scrollbar{
     display: none;
 }
 
-.filters-bar-section > h1{
-    margin-top: 1em;
-    padding-bottom: 1em;
+.filters-bar-section > p{
+    margin-top: 1vh;
+    padding-bottom: 1vw;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: "Segoe Print", serif;
 }
 
 .filters-bar-section > h3 {
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    font-weight: bold;
+    font-size: 1.5em;
+    font-family: "Segoe Print", serif;
 }
 
 .container{
     display: block;
     position: relative;
-    padding-left: 3em;
-    margin-bottom: 0.8em;
+    padding-left: 3vw;
+    margin-bottom: 1.5vh;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1.2em;
+    font-family: "Segoe Print", serif;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -248,10 +261,11 @@ section.project{
 }
 
 .container .checkmark:after {
-    left: 0.7em;
-    top: 0.3em;
-    width: 0.4em;
-    height: 0.8em;
+    left: 0.7vw;
+    top: 0.8vh;
+
+    width: 0.3vw;
+    height: 1vh;
     border: solid white;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
@@ -261,39 +275,38 @@ section.project{
 
 
 
-.info {
-    height: 85vh;
-}
-
-.info::-webkit-scrollbar{
-    display: none;
-}
-
 .projects{
-    overflow: scroll;
+    height: 85vh;
+
+    overflow: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 1vh;
 }
 
+.projects::-webkit-scrollbar{
+    display: none;
+}
+
 #project-1{
     width: 36vw;
     height: 34vh;
     
-    margin-top: 1em;
+    margin-top: 1vh;
 
     display: flex;
     flex-direction: column;
 
     background: #31393C 0 0 no-repeat padding-box;
-    border: 1px solid #5E5E5E;
     border-radius: 2em;
 }
 
 .image {
     width: 36vw;
     height: 16vh;
+
+    border-radius: 2em 2em 0 0;
 
     display: flex;
     justify-content: center;
@@ -303,38 +316,34 @@ section.project{
 img[src="public/img/first.svg"]{
     width: 36vw;
     height: 16vh;
-
     border-radius: 2em 2em 0 0;
 }
 
 .informations{
-    width: 32vw;
+    width: 36vw;
     height: 4vh;
 
     font-size: 2em;
     color: white;
 
     display: flex;
-    margin: 0.5em;
     justify-content: space-between;
+    align-items: center;
 }
 
-.icon-background{
-    width: 4.5vw;
-    letter-spacing: 0.1em;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;    
+.informations > h1 {
+    padding-left: 1vw;
 }
+
 
 .text {
-   color: white;
-
+    width: 36vw;
+    height: 14vh;
+    color: white;
     overflow: scroll;
-    margin-left: 1em;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    padding-bottom: 0.5vh;
+    padding-left: 1vw;
+    padding-right: 1vw;
     text-align: left;
     font-size: 1.5em;
 }
@@ -743,6 +752,7 @@ button[name="buttonHelp"]{
 button[name="buttonFb"]{
     width: 4vw;
     height: 5vh;
+
     border: none;
     background: #2176FF 0 0 no-repeat padding-box;
     border-radius: 2em 0 0 2em;
@@ -751,6 +761,7 @@ button[name="buttonFb"]{
 button[name="buttonMess"]{
     width: 4vw;
     height: 5vh;
+
     border: none;
     background: #2176FF 0 0 no-repeat padding-box;
 }
@@ -758,6 +769,7 @@ button[name="buttonMess"]{
 button[name="buttonIg"]{
     width: 4vw;
     height: 5vh;
+
     border: none;
     background: #2176FF 0 0 no-repeat padding-box;
 }
@@ -765,6 +777,7 @@ button[name="buttonIg"]{
 button[name="buttonTwitter"]{
     width: 4vw;
     height: 5vh;
+
     border: none;
     border-radius: 0 2em 2em 0;
     background: #2176FF 0 0 no-repeat padding-box;
@@ -1033,6 +1046,26 @@ button[name="pin-info-exit"]{
     align-items: center;
     width: 10vw;
     height: 4vh;
+}
+
+.profile2{
+    display: none;
+}
+
+.options2{
+    display: none;
+}
+
+.filters2{
+    display: none;
+}
+
+.add-pin-div2{
+    display: none;
+}
+
+.pin-info2{
+    display: none;
 }
 
 @media only screen and (max-device-width: 420px){
@@ -1422,11 +1455,14 @@ button[name="pin-info-exit"]{
 
 
     .profile2{
+        display: none;
+        /*display: flex;*/
+        flex-direction: column;
         width: 100vw;
         height: 90vh;
 
         position: absolute;
-        z-index: 3;
+        z-index: 5;
         top: 10vh;
         background: #31393C 0 0 no-repeat padding-box;
     }
@@ -1460,7 +1496,7 @@ button[name="pin-info-exit"]{
         position: absolute;
         left: 85vw;
         top: 2vh;
-        z-index: 4;
+        z-index: 6;
         background: white;
         border: none;
         border-radius: 2em;
@@ -1477,39 +1513,719 @@ button[name="pin-info-exit"]{
 
     .profile2-info-name{
         width: 90vw;
-        height: 12vh;
+        height: 11vh;
 
+        font-size: 1.5em;
+        font-family: "Segoe Print", serif;
         margin-left: 5vw;
+        padding-left: 2vw;
+        padding-right: 5vw;
+        margin-top: 1vh;
+
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid gray;
     }
+
+    .profile2-info-name > p{
+        font-size: 2.5em;
+    }
+
+    .profile2-info-name > button[name="profile2-edit-data-name"]{
+        border: none;
+        background: none;
+        color: white;
+        padding-top: 3vh;
+    }
+
 
     .profile2-info-surname{
         width: 90vw;
-        height: 12vh;
+        height: 11vh;
 
+        font-size: 1.5em;
+        font-family: "Segoe Print", serif;
         margin-left: 5vw;
+        padding-left: 2vw;
+        padding-right: 5vw;
+        margin-top: 1vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid gray;
     }
+
+    .profile2-info-surname > p{
+        font-size: 2.5em;
+    }
+
+    .profile2-info-surname > button[name="profile2-edit-data-surname"]{
+        border: none;
+        background: none;
+        color: white;
+        padding-top: 3vh;
+    }
+
 
     .profile2-info-email{
         width: 90vw;
-        height: 12vh;
+        height: 11vh;
 
+        font-size: 1.5em;
+        font-family: "Segoe Print", serif;
         margin-left: 5vw;
+        padding-left: 2vw;
+        padding-right: 5vw;
+        margin-top: 1vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid gray;
     }
+
+    .profile2-info-email > p{
+        font-size: 2.5em;
+    }
+
+    .profile2-info-email > button[name="profile2-edit-data-email"]{
+        border: none;
+        background: none;
+        color: white;
+        padding-top: 3vh;
+    }
+
 
     .profile2-info-adres{
         width: 90vw;
-        height: 12vh;
+        height: 11vh;
 
+        font-size: 1.5em;
+        font-family: "Segoe Print", serif;
         margin-left: 5vw;
+        padding-left: 2vw;
+        padding-right: 5vw;
+        margin-top: 1vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid gray;
     }
+
+    .profile2-info-adres > p{
+        font-size: 2.5em;
+    }
+
+    .profile2-info-adres > button[name="profile2-edit-data-adres"]{
+        border: none;
+        background: none;
+        color: white;
+        padding-top: 3vh;
+    }
+
 
     .profile2-info-phone{
         width: 90vw;
-        height: 12vh;
+        height: 11vh;
 
+        font-size: 1.5em;
+        font-family: "Segoe Print", serif;
         margin-left: 5vw;
+        padding-left: 2vw;
+        padding-right: 5vw;
+        margin-top: 1vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .profile2-info-phone > p{
+        font-size: 2.5em;
+    }
+
+    .profile2-info-phone > button[name="profile2-edit-data-phone"]{
+        border: none;
+        background: none;
+        color: white;
+        padding-top: 3vh;
     }
 
 
+
+    .options2{
+        display: none;
+        width: 65vw;
+        height: 90vh;
+        background: transparent linear-gradient(180deg, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
+        border-radius: 2em 0 0 2em;
+
+        position: absolute;
+        z-index: 4;
+        top: 10vh;
+        left: 35vw;
+
+        /*display: flex;*/
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+
+    .notification{
+        width: 65vw;
+        height: 15vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    button[name="bell"]{
+        width: 10vw;
+        height: 5vh;
+
+        border-radius: 2em;
+        border: solid black;
+    }
+
+    button[name="support"]{
+        width: 10vw;
+        height: 5vh;
+
+        border-radius: 2em;
+        border: solid black;
+    }
+
+    button[name="dark-mode"]{
+        width: 10vw;
+        height: 5vh;
+
+        border-radius: 2em;
+        border: solid black;
+    }
+
+    .break{
+        width: 65vw;
+        height: 50vh;
+    }
+
+    .other-app2{
+        width: 65vw;
+        height: 10vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button[name="buttonFb2"] {
+        width: 14vw;
+        height: 6vh;
+
+        border: none;
+        background: #215AFF 0 0 no-repeat padding-box;
+        border-radius: 2em 0 0 2em;
+    }
+
+    button[name="buttonMess2"] {
+        width: 14vw;
+        height: 6vh;
+
+        border: none;
+        background: #215AFF 0 0 no-repeat padding-box;
+    }
+
+    button[name="buttonInstagram2"] {
+        width: 14vw;
+        height: 6vh;
+
+        border: none;
+        background: #215AFF 0 0 no-repeat padding-box;
+    }
+
+
+    button[name="buttonTwitter2"] {
+        width: 14vw;
+        height: 6vh;
+
+        border: none;
+        border-radius: 0 2em 2em 0;
+        background: #215AFF 0 0 no-repeat padding-box;
+    }
+
+
+    .logout2{
+        width: 65vw;
+        height: 10vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button[name="buttonLogout2"]{
+        width: 56vw;
+        height: 6vh;
+
+        font-weight: bold;
+        font-size: 4em;
+
+        border-radius: 1em;
+        border: none;
+        background: #215AFF 0 0 no-repeat padding-box;
+    }
+
+    .producent-info2{
+        width: 65vw;
+        height: 15vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .producent-info2 > p {
+        font-size: 4em;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+    .filters2{
+        display: none;
+        width: 60vw;
+        height: 90vh;
+
+        position: absolute;
+        top: 10vh;
+        z-index: 3;
+
+        background: transparent linear-gradient(180deg, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
+        border-radius: 0 2em 2em 0;
+
+        /*display: flex;*/
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .profile2-image{
+        width: 60vw;
+        height: 20vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile2-image > img {
+        width: 40vw;
+        height: 20vh;
+
+        border-radius: 100%;
+    }
+
+    .profile2-labelName{
+        width: 40vw;
+        height: 5vh;
+
+        font-weight: bold;
+        font-size: 2em;
+        font-family: "Segoe Print", serif;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .profile2-labelName > p{
+        font-size: 2em;
+        font-weight: bold;
+    }
+
+    button[name="profile2Name"]{
+        width: 40vw;
+        height: 5vh;
+
+        margin-top: 3vh;
+        border-radius: 2em;
+        border: none;
+    }
+
+    button[name="profile2Name"] > p {
+        font-size: 3em;
+        font-family: "Segoe Print", serif;
+        font-weight: bold;
+    }
+
+    .profile2-filters{
+        width: 50vw;
+        height: 50vh;
+        margin-top: 5vh;
+
+        background: #31393C 0 0 no-repeat padding-box;
+        border-radius: 2em;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile2-filters > p{
+        padding-top: 2vh;
+        padding-left: 5vw;
+        font-size: 6em;
+        font-weight: bold;
+        font-family: "Segoe Print", serif;
+        color: white;
+    }
+
+    .profile2-filters-div{
+        width: 45vw;
+        height: 40vh;
+
+        overflow: scroll;
+    }
+
+    .profile2-filters-div::-webkit-scrollbar{
+        display: none;
+    }
+
+    .profile2-filters-div > h3{
+        font-size: 4em;
+        font-family: "Segoe Print", serif;
+        padding-top: 2vh;
+        padding-left: 5vw;
+        color: white;
+    }
+
+    .container2{
+        display: block;
+        position: relative;
+        padding-top: 0.5vh;
+        padding-left: 12vw;
+        cursor: pointer;
+        font-size: 3em;
+        color: white;
+        font-family: "Segoe Print", serif;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .container2 input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    .checkmark {
+        position: absolute;
+        top: 1.1vh;
+        left: 5vw;
+        z-index: 4;
+
+        height: 2vh;
+        width: 5vw;
+        background-color: #eee;
+    }
+
+    .container2:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    .container2 input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .container2 input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    .container2 .checkmark:after {
+        left: 2vw;
+        top: 0.2vh;
+        width: 1vw;
+        height: 1vh;
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+
+    .projects{
+        display: none;
+    }
+
+    .add-pin-div2{
+        display: none;
+
+        width: 70vw;
+        height: 55vh;
+
+        position: absolute;
+        z-index: 3;
+        top: 15vh;
+        left: 15vw;
+
+        background: #96AFB8 0 0 no-repeat padding-box;
+        border: 1px solid #707070;
+        border-radius: 2em;
+
+        /*display: flex;*/
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    label[for="pin2-desc"] {
+        color: black;
+        font-size: 3em;
+        font-weight: bold;
+        padding-bottom: 2vh;
+        padding-top: 2vh;
+    }
+
+    textarea[name="pin2-desc"] {
+        width: 60vw;
+        height: 40vh;
+        resize: none;
+
+        border: none;
+        background: #326063 0 0 no-repeat padding-box;
+        border-radius: 2em;
+        margin-bottom: 2vh;
+    }
+
+    button[name="upload-photo2"] {
+        width: 40vw;
+        height: 8vh;
+
+        border: none;
+        border-radius: 2em;
+        background: #326063 0 0 no-repeat padding-box;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button[name="upload-photo2"] > p {
+        padding-left: 1em;
+        font-size: 3em;
+    }
+
+    .buttons-pin2 {
+        width: 60vw;
+        height: 20vh;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    button[name="button-add2"] {
+        width: 25vw;
+        height: 6vh;
+        border: 3px solid #006100;
+        background: #326063;
+
+        border-radius: 2em;
+        color: black;
+    }
+
+    button[name="button-add2"]:hover{
+        background: #006100;
+        color: white;
+    }
+
+    button[name="button-add2"] > p {
+        font-size: 3em;
+    }
+
+    button[name="button-cancel2"] {
+        width: 25vw;
+        height: 6vh;
+        border: 3px solid #B60036;
+        background: #326063;
+
+        border-radius: 2em;
+        color: black;
+    }
+
+    button[name="button-cancel2"]:hover {
+        background: #B60036;
+        color: white;
+    }
+
+    button[name="button-cancel2"] > p {
+        font-size: 3em;
+    }
+
+
+    .pin-info2{
+        display: none;
+        width: 94vw;
+        height: 50vh;
+
+        position: absolute;
+        z-index: 3;
+        top: 12vh;
+        left: 3vw;
+
+        background: #96AFB8 0 0 no-repeat padding-box;
+        border: 1px solid #707070;
+        border-radius: 2em;
+
+        /*display: flex;*/
+    }
+
+    .pin-info-left2{
+        width: 40vw;
+        height: 50vh;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .pin-info-photo2{
+        width: 36vw;
+        height: 25vh;
+
+        background: #326063 0 0 no-repeat padding-box;
+        margin-top: 1vh;
+        border-radius: 2em;
+    }
+
+    .pin-info-star2{
+        width: 36vw;
+        height: 5vh;
+        margin-top: 3vh;
+        background: #8D8D8D 0 0 no-repeat padding-box;
+        border-radius: 2em;
+        color: white;
+
+        direction: rtl;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .pin-info-star2 i {
+        color: white;
+        transition: all 0.5s;
+    }
+
+    .pin-info-star2 i:hover{
+        transform: scale(1.3);
+        margin-left: 1px;
+        color: gold;
+    }
+
+    .s52:hover ~ i{
+        color: gold;
+    }
+
+    .s42:hover ~ i{
+        color: gold;
+    }
+
+    .s32:hover ~ i{
+        color: gold;
+    }
+
+    .s22:hover ~ i{
+        color: gold;
+    }
+
+    .s12:hover ~ i {
+        color: gold;
+    }
+
+    button[name="pin-info-exit2"] {
+        margin-top: 5vh;
+        width: 16vw;
+        height: 8vh;
+        border: none;
+        border-radius: 2em;
+        color: white;
+        background: #5D5B5B 0 0 no-repeat padding-box;
+    }
+
+    .pin-info-right2 {
+        width: 54vw;
+        height: 50vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .pin-info-right2-div{
+        margin-top: 1vh;
+        width: 50vw;
+        height: 46vh;
+
+        background: #326063 0 0 no-repeat padding-box;
+        border-radius: 2em;
+        color: white;
+
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+    }
+
+    .pin-info2-h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 10vh;
+    }
+
+    .pin-info2-h1 > h1 {
+        font-size: 3.5em;
+    }
+
+    .pin-info2-p {
+        height: 36vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "Times New Roman", serif;
+        font-size: 3em;
+    }
+
+    .pin-info2-h2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 10vh;
+    }
+
+    .pin-info2-h2 > h2{
+        font-size: 3em;
+    }
 
 }
