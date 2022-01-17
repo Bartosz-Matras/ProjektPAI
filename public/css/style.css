@@ -104,13 +104,15 @@ button[class="exit"]{
     align-items: center;
 }
 
-.circle{
+button[name="circle"]{
     width: 5vw;
     height: 5vw;
 
     display: flex;
     justify-content: center;
     align-items: center;
+
+    border: none;
 
     background-color: gray;
     border-radius: 50em;
@@ -325,6 +327,8 @@ img[src="public/img/first.svg"]{
 
     font-size: 2em;
     color: white;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 
     display: flex;
     justify-content: space-between;
@@ -817,7 +821,7 @@ button[name="buttonLogout"]{
     display: none;
 
     width: 30vw;
-    height: 50vh;
+    height: 55vh;
 
     z-index: 2;
     position: absolute;
@@ -851,6 +855,22 @@ label[for="pin-desc"]{
     font-size: 2em;
     padding-bottom: 2vh;
     padding-top: 2vh;
+}
+
+.add-pin-div > input{
+    width: 26vw;
+    height: 4vh;
+
+    background: #326063 0 0 no-repeat padding-box;
+    border: none;
+    border-radius: 2em;
+
+    padding-left: 1vw;
+    margin-bottom: 2vh;
+}
+
+.add-pin-div > input::placeholder{
+    color: black;
 }
 
 button[name="upload-photo"]{
@@ -1976,13 +1996,12 @@ button[name="pin-info-exit"]{
     .add-pin-div2{
         display: none;
 
-        width: 70vw;
-        height: 55vh;
+        width: 100vw;
+        height: 60vh;
 
         position: absolute;
         z-index: 3;
         top: 15vh;
-        left: 15vw;
 
         background: #96AFB8 0 0 no-repeat padding-box;
         border: 1px solid #707070;
@@ -1997,16 +2016,19 @@ button[name="pin-info-exit"]{
 
     label[for="pin2-desc"] {
         color: black;
-        font-size: 3em;
+        font-size: 4em;
         font-weight: bold;
         padding-bottom: 2vh;
         padding-top: 2vh;
     }
 
     textarea[name="pin2-desc"] {
-        width: 60vw;
+        width: 90vw;
         height: 40vh;
         resize: none;
+        font-size: 3em;
+        padding-left: 5vw;
+        padding-right: 5vw;
 
         border: none;
         background: #326063 0 0 no-repeat padding-box;
@@ -2014,8 +2036,30 @@ button[name="pin-info-exit"]{
         margin-bottom: 2vh;
     }
 
+    .add-pin-div2 > input {
+        width: 90vw;
+        height: 6vh;
+
+        background: #326063 0 0 no-repeat padding-box;
+        border: none;
+        border-radius: 2em;
+
+        display: flex;
+        align-items: center;
+
+        padding-left: 5vw;
+        margin-bottom: 2vh;
+        font-size: 3em;
+    }
+
+    .add-pin-div2 > input::placeholder{
+        color: black;
+
+        display: flex;
+    }
+
     button[name="upload-photo2"] {
-        width: 40vw;
+        width: 50vw;
         height: 8vh;
 
         border: none;

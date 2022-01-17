@@ -4,6 +4,17 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/3ee6bedd82.js" crossorigin="anonymous"></script>
     <script src="public/js/map.js" crossorigin="anonymous" defer></script>
+    <script>
+        function showAccountDiv(){
+            var x = document.getElementById("account-div");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+        }
+    </script>
+
 
     <!-- MAPBOX LIBRARY CDN -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
@@ -38,11 +49,11 @@
             </div>
 
             <div class="profile">
-                <div class="circle">
+                <button name="circle" onclick="showAccountDiv()">
                     <span class="profile-icon" style="color:white;">
                         <i class="fas fa-user-tie fa-2x"></i>
                     </span>
-                </div>
+                </button>
                 <div class="name">
                     Bartek
                 </div>
@@ -575,6 +586,7 @@
                     <textarea id="pin-desc" name="pin-desc" rows="1" cols="1">
 
                     </textarea>
+                    <input name="tags" type="text" placeholder="Enter tags:">
                     <button name="upload-photo">
                         <i class="fas fa-upload"></i>
                         <p>Upload file</p>
@@ -594,6 +606,7 @@
                     <textarea id="pin2-desc" name="pin2-desc" rows="1" cols="1">
 
                     </textarea>
+                    <input name="tags" type="text" placeholder="Enter tags after the comma:">
                     <button name="upload-photo2">
                         <i class="fas fa-upload fa-2x"></i>
                         <p>Upload file</p>

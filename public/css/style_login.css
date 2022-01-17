@@ -53,7 +53,7 @@ img{
     align-items: center;
 }
 
-form {
+.login-container > form {
     width: 40vw;
     height: 28vh;
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
@@ -140,11 +140,17 @@ button[name="buttonZ2"] {
     align-items: center;
 }
 
+.sing-up > form {
+   height: 0 !important;
+
+}
+
 .sing-up-div {
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -251,7 +257,7 @@ button[name="sing-up-exit"] {
         grid-row-start: 2;
     }
 
-    form {
+    .login-container > form {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -267,7 +273,7 @@ button[name="sing-up-exit"] {
         justify-content: center;
         
         width: 90vw;
-        height: 22vh;
+        height: 24vh;
 
         background: transparent linear-gradient(180deg, #33A1FDFC 0%, #2176FFFC 100%) 0 0 no-repeat padding-box;
         border: 1px solid #707070;
@@ -291,6 +297,10 @@ button[name="sing-up-exit"] {
     }
 
     .inputs > .messages {
+        height: 3vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         font-size: 0.9em;
         font-family: "Segoe Print", sans-serif;
     }
