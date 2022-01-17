@@ -11,6 +11,7 @@ Routing::get('login', 'SecurityController');
 Routing::get('project', 'DefaultController');
 Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
+Routing::post('addPin', 'ProjectController');
 
 
 Routing::run($path);

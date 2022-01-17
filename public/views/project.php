@@ -582,23 +582,31 @@
                 </div>
 
                 <div class="add-pin-div">
-                    <label for="pin-desc">Dodaj opis:</label>
-                    <textarea id="pin-desc" name="pin-desc" rows="1" cols="1">
+                    <form method="post" action="addPin" ENCTYPE="multipart/form-data">
+                        <?php
+                        if(isset($messages)){
+                            foreach ($messages as $message){
+                                echo $message;
+                            }
+                        }
+                        ?>
+                        <label for="pin-desc">Dodaj opis:</label>
+                        <textarea id="pin-desc" name="pin-desc" rows="1" cols="1">
 
-                    </textarea>
-                    <input name="tags" type="text" placeholder="Enter tags:">
-                    <button name="upload-photo">
-                        <i class="fas fa-upload"></i>
-                        <p>Upload file</p>
-                    </button>
-                    <div class="buttons-pin">
-                        <button name="button-add">
-                            <p>Dodaj</p>
-                        </button>
-                        <button name="button-cancel">
-                            <p>Anuluj</p>
-                        </button>
-                    </div>
+                        </textarea>
+                        <input name="title" type="text" placeholder="Enter title:">
+                        <input name="tags" type="text" placeholder="Enter tags:">
+                        <input name="upload-input" type="file">
+
+                        <div class="buttons-pin">
+                            <button name="button-add" type="submit">
+                                <p>Dodaj</p>
+                            </button>
+                            <button name="button-cancel">
+                                <p>Anuluj</p>
+                            </button>
+                        </div>
+                    </form>
                 </div>
 
                 <div class="add-pin-div2">

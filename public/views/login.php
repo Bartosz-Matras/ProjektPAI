@@ -2,16 +2,6 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_login.css">
     <title>LOGIN PAGE</title>
-    <script>
-        function showDiv(){
-            var x = document.getElementById("sing-up");
-            if (x.style.display === "none") {
-                x.style.display = "flex";
-            } else {
-                x.style.display = "none";
-            }
-        }
-    </script>
 </head>
 
 <body>
@@ -39,7 +29,7 @@
                 </div>
                 
                 <div class="buttons">
-                    <button name="buttonZ2">
+                    <button name="buttonZ2" type="submit">
                         Zaloguj sie
                     </button>
                     <button name="buttonZ" onclick="showDiv()">
