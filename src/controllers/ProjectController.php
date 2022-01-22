@@ -33,7 +33,8 @@ class ProjectController extends AppController{
 
 
             //TODO
-            $pin = new Pins($_POST['title'], $_POST['pin-desc'], $imageUrl, $_POST['tags']);
+            $pin = new Pins(7, 255, 255, $_POST['title'], $_POST['pin-desc'], $imageUrl, $_POST['tags']);
+            $this->pinRepository -> addPin($pin);
 
             return $this->render("project", ['messages' => $this->messages]);
         }

@@ -4,16 +4,8 @@
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/3ee6bedd82.js" crossorigin="anonymous"></script>
     <script src="public/js/map.js" crossorigin="anonymous" defer></script>
-    <script>
-        function showAccountDiv(){
-            var x = document.getElementById("account-div");
-            if (x.style.display === "none") {
-                x.style.display = "flex";
-            } else {
-                x.style.display = "none";
-            }
-        }
-    </script>
+    <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
+    <script src="public/js/account-div.js" crossorigin="anonymous" defer></script>
 
 
     <!-- MAPBOX LIBRARY CDN -->
@@ -37,19 +29,21 @@
             </div>
 
             <div class="search-town">
-                <div class="search-wrap">
-                    <button class="wysz">
-                        <i class="fas fa-search fa-2x"></i>
-                    </button>
-                    <input name="search" type="text" placeholder="Szukaj miejsca">
-                    <button class="exit">
-                        <i class="fas fa-times-circle fa-2x"></i>
-                    </button>
-                </div>
+                <form action="project" method="POST" id="search-form">
+                    <div class="search-wrap">
+                        <button class="wysz">
+                            <i class="fas fa-search fa-2x"></i>
+                        </button>
+                        <input name="search" type="text" placeholder="Szukaj miejsca">
+                        <button class="exit" onclick="clearSearchDiv()">
+                            <i class="fas fa-times-circle fa-2x"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
 
             <div class="profile">
-                <button name="circle" onclick="showAccountDiv()">
+                <button name="circle" onclick="showAccountDiv()" >
                     <span class="profile-icon" style="color:white;">
                         <i class="fas fa-user-tie fa-2x"></i>
                     </span>
@@ -59,7 +53,7 @@
                 </div>
             </div>
 
-            <button name="settings-button">
+            <button name="settings-button" onclick="showOptionsDiv()">
                 <span class="settings-icon" style="color: white;">
                     <i class="fas fa-cog fa-3x"></i>
                 </span>
@@ -347,7 +341,7 @@
                 <div class="mapa">
                     <div id="map">
                         <div class="pin">
-                            <button name="add-pin">
+                            <button name="add-pin" onclick="showAddPinDiv()">
                                 <i class="fas fa-plus-square fa-3x"></i>
                             </button>
                         </div>
@@ -371,7 +365,7 @@
 
                 <div class="account-div">
                     <div class="photo-div">
-                        <button name="close-button">
+                        <button name="close-button" onclick="showAccountDiv()">
                             <i class="fas fa-times fa-3x"></i>
                         </button>
                         <div class="photo">
@@ -387,13 +381,18 @@
                         <div class="data-flex">
                             <div class="data-first">
                                 <div class="data-name">
-                                    <p>Name: <br>
-                                        Bartosz
-                                    </p>
-                                    <button name="edit-data">
+                                    <form action="account" method="post" id="account-div">
+                                        <p>
+                                            Name:<br>
+                                            <input id="input-name" type="text" readonly="true">
+                                        </p>
+                                    </form>
+                                    <button name="edit-data" onclick="accountDiv('input-name')" >
                                         <i class="far fa-edit fa-2x"></i>
                                     </button>
                                 </div>
+
+<!--                                <form action="account" method="post"-->
                                 <div class="data-surname">
                                     <p>Nazwisko: <br>
                                         Matras
@@ -514,28 +513,41 @@
                     </div>
                     <div class="help">
                         <button name="buttonHelp">
-                            <p>Pomoc</p>
+                            <p>
+                                Pomoc
+                            </p>
                         </button>
                     </div>
                     <div class="more">
                     </div>
                     <div class="other-app">
-                        <button name="buttonFb">
-                            <i class="fab fa-facebook-f fa-2x"></i>
-                        </button>
-                        <button name="buttonMess">
-                            <i class="fab fa-facebook-messenger fa-2x"></i>                        </button>
-                        <button name="buttonIg">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </button>
-                        <button name="buttonTwitter">
-                            <i class="fab fa-twitter fa-2x"></i>
-                        </button>
+                        <form action="https://www.facebook.com/">
+                            <button name="buttonFb">
+                                <i class="fab fa-facebook-f fa-2x"></i>
+                            </button>
+                        </form>
+                        <form action="https://www.messenger.com/">
+                            <button name="buttonMess">
+                                <i class="fab fa-facebook-messenger fa-2x"></i>
+                            </button>
+                        </form>
+                        <form action="https://www.instagram.com/">
+                            <button name="buttonIg">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </button>
+                        </form>
+                        <form action="https://twitter.com/">
+                            <button name="buttonTwitter">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </button>
+                        </form>
                     </div>
                     <div class="logout">
-                        <button name="buttonLogout">
-                            <p>Wyloguj.</p>
-                        </button>
+                        <form action="login.php">
+                            <button name="buttonLogout">
+                                <p>Wyloguj.</p>
+                            </button>
+                        </form>
                     </div>
                     <div class="producent-info">
                         <p>Train 1.0.1 <br> Stworzono w Kraków</p>

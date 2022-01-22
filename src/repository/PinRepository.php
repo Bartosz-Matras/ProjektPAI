@@ -8,8 +8,8 @@ class PinRepository extends Repository {
 
     public function addPin(Pins $pins){
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO users (idUser, x, y, title, description, photoPath, tags)
-            VALUES (?, ?, ?, ?, ?, ?)
+            INSERT INTO pins (id_user, x, y, title, description, photo_path, tags)
+            VALUES (?, ?, ?, ?, ?, ?, ?)
         ');
 
         $stmt->execute([

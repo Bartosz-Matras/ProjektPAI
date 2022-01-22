@@ -431,7 +431,6 @@ button[name='localization'] {
 
 
 .account-div{
-    display: none;
     width: 40vw;
     height: 70vh;
 
@@ -441,7 +440,8 @@ button[name='localization'] {
     top: 15vh;
     right: 10vw;
 
-    /*display: flex;*/
+    /*display: none;*/
+    display: flex;
     flex-direction: column;
 }
 
@@ -526,28 +526,42 @@ button[name="close-button"] {
     justify-content: space-around;
 }
 
+.data-name{
+    width: 16vw;
+    height: 11vh;
+
+    color: white;
+    border-bottom: solid white;
+    font-size: 1.5em;
+    margin-left: 1em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data-name > p > input {
+    width: 14vw;
+    height: 3vh;
+
+    background: #028090 0 0 no-repeat padding-box;
+    border-style: solid;
+    border-width: thin;
+    border-color: white;
+    margin-top: 0.5vh;
+}
+
 button[name="edit-data"]{
     background: #028090 0 0 no-repeat padding-box;
     border: none;
     color: white;
 }
 
-.data-name{
-    width: 16vw;
-    height: 11vh;
-
-    font-size: 1.5em;
-    margin-left: 1em;
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: solid black;
+button[name="edit-data"] > i {
+    padding-top: 1.5vh;
 }
 
-.data-name > i {
-    padding-top: 1em;
-}
+
 
 .data-surname{
     width: 16vw;
@@ -559,7 +573,7 @@ button[name="edit-data"]{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid black;
+    border-bottom: solid white;
 }
 
 .data-surname > i {
@@ -577,7 +591,7 @@ button[name="edit-data"]{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid black;
+    border-bottom: solid white;
 }
 
 .data-email > i {
@@ -605,7 +619,7 @@ button[name="edit-data"]{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid black;
+    border-bottom: solid white;
 }
 
 .data-adress > i {
@@ -623,7 +637,7 @@ button[name="edit-data"]{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-bottom: solid black;
+    border-bottom: solid white;
 }
 
 .data-phone > i {
@@ -739,6 +753,12 @@ button[name="buttonHelp"]{
     font-size: 2em;
 }
 
+
+button[name="buttonHelp"]:hover {
+    border: 1px black;
+    background: white;
+}
+
 .more{
     height: 40vh;
 }
@@ -760,6 +780,12 @@ button[name="buttonFb"]{
     border: none;
     background: #2176FF 0 0 no-repeat padding-box;
     border-radius: 2em 0 0 2em;
+    transition-duration: 0.4s;
+}
+
+button[name="buttonFb"]:hover{
+    border: 1px #2176FF;
+    background: white;
 }
 
 button[name="buttonMess"]{
@@ -768,7 +794,14 @@ button[name="buttonMess"]{
 
     border: none;
     background: #2176FF 0 0 no-repeat padding-box;
+    transition-duration: 0.4s;
 }
+
+button[name="buttonMess"]:hover{
+    border: 1px #2176FF;
+    background: white;
+}
+
 
 button[name="buttonIg"]{
     width: 4vw;
@@ -776,6 +809,12 @@ button[name="buttonIg"]{
 
     border: none;
     background: #2176FF 0 0 no-repeat padding-box;
+    transition-duration: 0.4s;
+}
+
+button[name="buttonIg"]:hover{
+    border: 1px #2176FF;
+    background: white;
 }
 
 button[name="buttonTwitter"]{
@@ -785,6 +824,12 @@ button[name="buttonTwitter"]{
     border: none;
     border-radius: 0 2em 2em 0;
     background: #2176FF 0 0 no-repeat padding-box;
+    transition-duration: 0.4s;
+}
+
+button[name="buttonTwitter"]:hover{
+    border: 1px #2176FF;
+    background: white;
 }
 
 .logout{
@@ -804,6 +849,11 @@ button[name="buttonLogout"]{
     background: #2176FF 0 0 no-repeat padding-box;
     border-radius: 2em;
     border: none;
+    transition-duration: 0.4s;
+}
+
+button[name="buttonLogout"]:hover{
+    background: #B60036;
 }
 
 .producent-info{
@@ -817,8 +867,9 @@ button[name="buttonLogout"]{
 }
 
 
+
 .add-pin-div{
-    /*display: none;*/
+
 
     width: 30vw;
     height: 60vh;
@@ -832,8 +883,9 @@ button[name="buttonLogout"]{
     border: 1px solid #707070;
     border-radius: 2em;
 
-    display: flex;
+    display: none;
     justify-content: flex-start;
+
     align-items: center;
     flex-direction: column;
     text-align: left;
@@ -962,6 +1014,7 @@ button[name="button-cancel"]:hover{
     background: #B60036;
     color: white;
 }
+
 
 .pin-info{
     display: none;

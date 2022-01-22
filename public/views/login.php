@@ -2,6 +2,8 @@
 <head>
     <link rel="stylesheet" type="text/css" href="public/css/style_login.css">
     <title>LOGIN PAGE</title>
+    <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
+
 </head>
 
 <body>
@@ -14,35 +16,34 @@
         </div>
 
         <div class="login-container">
-            <form action="login" method="POST">
-                <div class="inputs">
-                    <div class="messages">
-                        <?php if(isset($messages)){
-                            foreach ($messages as $message){
-                                echo $message;
+            <div class="login-container-div">
+                <form action="login" method="POST" id="login-form">
+                    <div class="inputs">
+                        <div class="messages">
+                            <?php if(isset($messages)){
+                                foreach ($messages as $message){
+                                    echo $message;
+                                }
                             }
-                        }
-                        ?>
+                            ?>
+                        </div>
+                        <input name="login" type="text" placeholder="login">
+                        <input name="password" type="password" placeholder="password">
                     </div>
-                    <input name="login" type="text" placeholder="login">
-                    <input name="password" type="password" placeholder="password">
-                </div>
-                
+                </form>
                 <div class="buttons">
-                    <button name="buttonZ2" type="submit">
+                    <button name="buttonZ2" type="submit" form="login-form">
                         Zaloguj sie
                     </button>
-                    <button name="buttonZ" onclick="showDiv()">
+                    <button name="buttonZ" onclick="showSingUpDiv()">
                         Zarejestruj sie
                     </button>
-
                 </div>
-            </form>
+            </div>
         </div>
 
         <div class="sing-up">
-            <form action="register" method="POST">
-
+            <form action="register" method="POST" id="register-form">
                 <div class="sing-up-div">
                     <p>Login:</p>
                     <input name="login" type="text" placeholder="Login">
@@ -57,15 +58,16 @@
                     <p>Numer telefonu:</p>
                     <input name="numerTelefonu" type="text" placeholder="Numer telefonu">
                 </div>
-                <div class="sing-up-buttons">
-                    <button name="sing-up" type="submit">
-                        Zarejestruj się
-                    </button>
-                    <button name="sing-up-exit" onclick="showDiv()">
-                        Anuluj
-                    </button>
-                </div>
             </form>
+            <div class="sing-up-buttons">
+                <button name="sing-up" type="submit" form="register-form">
+                    Zarejestruj się
+                </button>
+                <button name="sing-up-exit" type="button" onclick="showSingUpDiv()">
+                    Anuluj
+                </button>
+            </div>
+
         </div>
 
         <div class="sing-up-mobile">
@@ -104,3 +106,5 @@
         </div>
     </div>
 </body>
+
+

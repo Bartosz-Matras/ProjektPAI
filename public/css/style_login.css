@@ -44,7 +44,6 @@ img{
 }
 
 .login-container{
-    /*display: none;*/
     grid-column-start: 2;
     grid-row-start: 2;
 
@@ -53,11 +52,22 @@ img{
     align-items: center;
 }
 
-.login-container > form {
+
+.login-container-div {
     width: 40vw;
     height: 28vh;
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
     border-radius: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login-container-div > form {
+    width: 40vw;
+    height: 20vh;
 
     display: flex;
     justify-content: center;
@@ -123,7 +133,6 @@ button[name="buttonZ2"] {
 
 
 .sing-up{
-    display: none;
     position: absolute;
     top: 5vh;
     left: 55vw;
@@ -135,14 +144,9 @@ button[name="buttonZ2"] {
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
     border-radius: 2em;
 
-    /*display: flex;*/
+    display: none;
     flex-direction: column;
     align-items: center;
-}
-
-.sing-up > form {
-   height: 0 !important;
-
 }
 
 .sing-up-div {

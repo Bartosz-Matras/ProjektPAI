@@ -8,10 +8,10 @@ class User{
     private $name;
     private $surname;
     private $phone;
-    private $isUploaded;
+    private $profilePhotoPath;
 
 
-    public function __construct($login, $password, $email, $name, $surname, $phone, $isUploaded=false)
+    public function __construct($login, $password, $email, $name, $surname, $phone, $profilePhotoPath)
     {
         $this->login = $login;
         $this->password = $password;
@@ -19,7 +19,7 @@ class User{
         $this->name = $name;
         $this->surname = $surname;
         $this->phone = $phone;
-        $this->isUploaded = $isUploaded;
+        $this->profilePhotoPath = $profilePhotoPath;
     }
 
 
@@ -83,14 +83,14 @@ class User{
         $this->phone = $phone;
     }
 
-    public function getIsUploaded()
+    public function getProfilePhotoPath()
     {
-        return $this->isUploaded;
+        return $this->profilePhotoPath;
     }
 
-    public function setIsUploaded($isUploaded)
+    public function setProfilePhotoPath($profilePhotoPath): void
     {
-        $this->isUploaded = $isUploaded;
+        $this->profilePhotoPath = $profilePhotoPath;
     }
 
     public function getIdUser()
