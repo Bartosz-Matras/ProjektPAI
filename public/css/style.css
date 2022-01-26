@@ -205,13 +205,6 @@ section.project{
     font-family: "Segoe Print", serif;
 }
 
-.filters-bar-section > h3 {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-    font-weight: bold;
-    font-size: 1.5em;
-    font-family: "Segoe Print", serif;
-}
 
 .container{
     display: block;
@@ -316,8 +309,10 @@ section.project{
 }
 
 img[src="public/img/first.svg"]{
-    width: 36vw;
-    height: 16vh;
+    width: 100%;
+    height: 100%;
+    float: left;
+    object-fit: cover;
     border-radius: 2em 2em 0 0;
 }
 
@@ -432,7 +427,7 @@ button[name='localization'] {
 
 .account-div{
     width: 40vw;
-    height: 70vh;
+    height: 75vh;
 
     background: #114B5F 0 0 no-repeat padding-box;
     z-index: 2;
@@ -440,8 +435,7 @@ button[name='localization'] {
     top: 15vh;
     right: 10vw;
 
-    /*display: none;*/
-    display: flex;
+    display: none;
     flex-direction: column;
 }
 
@@ -503,11 +497,14 @@ button[name="close-button"] {
     color: white;
 }
 
+
 .data{
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
+
 
 .data-flex{
     width: 36vw;
@@ -517,6 +514,7 @@ button[name="close-button"] {
     display: flex;
 }
 
+
 .data-first{
     width: 16vw;
     height: 33vh;
@@ -525,6 +523,7 @@ button[name="close-button"] {
     flex-direction: column;
     justify-content: space-around;
 }
+
 
 .data-name{
     width: 16vw;
@@ -544,23 +543,30 @@ button[name="close-button"] {
     width: 14vw;
     height: 3vh;
 
+    padding-left: 0.5vw;
+    border: none;
     background: #028090 0 0 no-repeat padding-box;
-    border-style: solid;
-    border-width: thin;
-    border-color: white;
     margin-top: 0.5vh;
 }
 
-button[name="edit-data"]{
+.data-name > p > input:focus{
+    color: white;
+}
+
+.data-name > p > input:not(:checked){
+    color: white;
+}
+
+.data-name > button[name="edit-data"]{
     background: #028090 0 0 no-repeat padding-box;
     border: none;
     color: white;
 }
 
-button[name="edit-data"] > i {
+.data-name > button[name="edit-data"] > i{
+    font-size: 2em;
     padding-top: 1.5vh;
 }
-
 
 
 .data-surname{
@@ -576,9 +582,36 @@ button[name="edit-data"] > i {
     border-bottom: solid white;
 }
 
-.data-surname > i {
-    padding-top: 1em;
+.data-surname > p > input {
+    width: 14vw;
+    height: 3vh;
+
+    padding-left: 0.5vw;
+
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    margin-top: 0.5vh;
 }
+
+.data-surname > p > input:focus{
+    color: white;
+}
+
+.data-surname > p > input:not(:checked){
+    color: white;
+}
+
+.data-surname > button[name="edit-data"]{
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    color: white;
+}
+
+.data-surname > button[name="edit-data"] > i {
+    font-size: 2em;
+    padding-top: 1.5vh;
+}
+
 
 .data-email{
     width: 16vw;
@@ -594,9 +627,36 @@ button[name="edit-data"] > i {
     border-bottom: solid white;
 }
 
-.data-email > i {
-    padding-top: 1em;
+.data-email > p > input {
+    width: 14vw;
+    height: 3vh;
+
+    padding-left: 0.5vw;
+
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    margin-top: 0.5vh;
 }
+
+.data-email > p > input:focus{
+    color: white;
+}
+
+.data-email > p > input:not(:checked){
+    color: white;
+}
+
+.data-email > button[name="edit-data"]{
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    color: white;
+}
+
+.data-email > button[name="edit-data"] > i {
+    font-size: 2em;
+    padding-top: 1.5vh;
+}
+
 
 .data-second{
     width: 16vw;
@@ -609,9 +669,10 @@ button[name="edit-data"] > i {
     justify-content: space-around;
 }
 
+
 .data-adress{
     width: 16vw;
-    height: 11vh;
+    height: 16vh;
 
     font-size: 1.5em;
     margin-left: 1em;
@@ -622,9 +683,36 @@ button[name="edit-data"] > i {
     border-bottom: solid white;
 }
 
-.data-adress > i {
-    padding-top: 1em;
+.data-adress > p > input {
+    width: 14vw;
+    height: 3vh;
+
+    padding-left: 0.5vw;
+
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    margin-top: 0.5vh;
 }
+
+.data-adress > p > input:focus{
+    color: white;
+}
+
+.data-adress > p > input:not(:checked){
+    color: white;
+}
+
+.data-adress > button[name="edit-data"]{
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    color: white;
+}
+
+.data-adress > button[name="edit-data"] > i {
+    font-size: 2em;
+    padding-top: 1.5vh;
+}
+
 
 .data-phone{
     width: 16vw;
@@ -640,13 +728,53 @@ button[name="edit-data"] > i {
     border-bottom: solid white;
 }
 
-.data-phone > i {
-    padding-top: 1em;
+.data-phone > p > input {
+    width: 14vw;
+    height: 3vh;
+
+    padding-left: 0.5vw;
+
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    margin-top: 0.5vh;
 }
+
+.data-phone > p > input:focus{
+    color: white;
+}
+
+.data-phone > p > input:not(:checked){
+    color: white;
+}
+
+.data-phone > button[name="edit-data"]{
+    background: #028090 0 0 no-repeat padding-box;
+    border: none;
+    color: white;
+}
+
+.data-phone > button[name="edit-data"] > i {
+    font-size: 2em;
+    padding-top: 1.5vh;
+}
+
+.data > button[name="save-data"]{
+    margin-top: 2vh;
+    width: 10vw;
+    height: 3vh;
+
+    background: #028090 0 0 no-repeat padding-box;
+    border-radius: 2em;
+    border-width: thin;
+    border-color: gainsboro;
+}
+
+
 
 .bottom-bar {
     display: none;
 }
+
 
 
 .options{
@@ -870,9 +998,8 @@ button[name="buttonLogout"]:hover{
 
 .add-pin-div{
 
-
     width: 30vw;
-    height: 60vh;
+    height: 65vh;
 
     z-index: 2;
     position: absolute;
@@ -899,6 +1026,13 @@ button[name="buttonLogout"]:hover{
     text-align: left;
 }
 
+label[for="pin-desc"]{
+    color: white;
+    font-size: 2em;
+    padding-bottom: 2vh;
+    padding-top: 2vh;
+}
+
 textarea[name="pin-desc"]{
     width: 26vw;
     height: 25vh;
@@ -910,28 +1044,39 @@ textarea[name="pin-desc"]{
     margin-bottom: 2vh;
 }
 
-label[for="pin-desc"]{
-    color: white;
-    font-size: 2em;
-    padding-bottom: 2vh;
-    padding-top: 2vh;
-}
 
-.add-pin-div > form > input[name="tags"]{
+
+/*.add-pin-div > form > input[name="tags"]{*/
+/*    width: 26vw;*/
+/*    height: 4vh;*/
+
+/*    background: #326063 0 0 no-repeat padding-box;*/
+/*    border: none;*/
+/*    border-radius: 2em;*/
+
+/*    padding-left: 1vw;*/
+/*    margin-bottom: 2vh;*/
+/*}*/
+
+/*.add-pin-div > form > input[name="tags"]::placeholder{*/
+/*    color: black;*/
+/*}*/
+
+
+.form-group {
     width: 26vw;
-    height: 4vh;
+    height: 10vh;
+}
 
-    background: #326063 0 0 no-repeat padding-box;
-    border: none;
+.mul-select{
+    width: 100%;
+    height: 75%;
     border-radius: 2em;
-
-    padding-left: 1vw;
-    margin-bottom: 2vh;
+    background: #326063 0 0 no-repeat padding-box;
+    color: #B60036;
 }
 
-.add-pin-div > form > input[name="tags"]::placeholder{
-    color: black;
-}
+
 
 .add-pin-div > form > input[name="title"]{
     width: 26vw;
@@ -978,7 +1123,7 @@ input[name="upload-input"]::-webkit-file-upload-button{
 
 .buttons-pin{
     width: 26vw;
-    height: 5vh;
+    height: 10vh;
     margin-top: 2vh;
 
     display: flex;
@@ -1848,6 +1993,7 @@ button[name="pin-info-exit"]{
         background: #215AFF 0 0 no-repeat padding-box;
     }
 
+
     button[name="buttonInstagram2"] {
         width: 14vw;
         height: 6vh;
@@ -2003,13 +2149,6 @@ button[name="pin-info-exit"]{
         display: none;
     }
 
-    .profile2-filters-div > h3{
-        font-size: 4em;
-        font-family: "Segoe Print", serif;
-        padding-top: 2vh;
-        padding-left: 5vw;
-        color: white;
-    }
 
     .container2{
         display: block;

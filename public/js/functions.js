@@ -11,6 +11,18 @@ function showSingUpDiv(){
     }
 }
 
+function showSingUpDiv2(){
+    const x = document.getElementsByClassName("sing-up-mobile")[0];
+    const y = document.getElementsByClassName("login-container2")[0];
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+        y.style.display = "none";
+    } else {
+        x.style.display = "none";
+        y.style.display = "flex";
+    }
+}
+
 function showAccountDiv(){
     const x = document.getElementsByClassName("account-div")[0];
     if (x.style.display === "none") {
@@ -22,6 +34,15 @@ function showAccountDiv(){
 
 function showOptionsDiv(){
     const x = document.getElementsByClassName("options")[0];
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showOptionsDiv2(){
+    const x = document.getElementsByClassName("options2")[0];
     if (x.style.display === "none") {
         x.style.display = "flex";
     } else {
@@ -42,3 +63,4 @@ function showAddPinDiv(){
 function clearSearchDiv(){
     document.getElementById("search-form").reset();
 }
+

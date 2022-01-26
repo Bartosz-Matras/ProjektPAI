@@ -38,9 +38,10 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/project");
+
         return $this->render('project');
-//        $url = "http://$_SERVER[HTTP_HOST]";
-//        header("Location: {$url}/project");
     }
 
     public function register()
@@ -56,6 +57,10 @@ class SecurityController extends AppController
         $email = $_POST['email'];
         $numerTelefonu = $_POST['numerTelefonu'];
 
+
+        if ($login == null || $haslo == null || $email == null){
+            return $this->render('login', ['messages' => ['Login, Password, Email can\'t be null']]);
+        }
 
         $user = new User($login, md5($haslo), $email, $imie, $nazwisko, $numerTelefonu);
 

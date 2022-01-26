@@ -57,7 +57,7 @@ img{
     width: 40vw;
     height: 28vh;
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
-    border-radius: 20px;
+    border-radius: 2em;
 
     display: flex;
     justify-content: center;
@@ -134,13 +134,13 @@ button[name="buttonZ2"] {
 
 .sing-up{
     position: absolute;
-    top: 5vh;
+    top: 2vh;
     left: 55vw;
     z-index: 2;
 
 
     width: 40vw;
-    height: 90vh;
+    height: 96vh;
     background: transparent linear-gradient(180deg, #FFFFFF 0%, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
     border-radius: 2em;
 
@@ -148,6 +148,20 @@ button[name="buttonZ2"] {
     flex-direction: column;
     align-items: center;
 }
+
+.messages-sing{
+    height: 5vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2vh;
+
+    font-weight: bold;
+    font-size: 2em;
+    color: #B60036;
+}
+
 
 .sing-up-div {
     height: 80vh;
@@ -222,6 +236,9 @@ button[name="sing-up-exit"] {
     display: none;
 }
 
+.login-container2{
+    display: none;
+}
 
 
 
@@ -257,11 +274,19 @@ button[name="sing-up-exit"] {
     }
 
     .login-container{
-        grid-column-start: 1;
-        grid-row-start: 2;
+        display: none;
     }
 
-    .login-container > form {
+    .login-container2 {
+        grid-column-start: 1;
+        grid-row-start: 2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .login-container2 > .login-container2-div > form {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -275,7 +300,7 @@ button[name="sing-up-exit"] {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
+
         width: 90vw;
         height: 24vh;
 
@@ -337,7 +362,6 @@ button[name="sing-up-exit"] {
 
 
     .sing-up-mobile{
-        display: none;
         position: absolute;
         top: 0;
         left: 0;
@@ -347,23 +371,41 @@ button[name="sing-up-exit"] {
         height: 100vh;
         background: transparent linear-gradient(180deg, #33A1FDFC 0%, #2176FFFC 100%) 0 0 no-repeat padding-box;
 
-        /*display: flex;*/
+        display: none;
         flex-direction: column;
         justify-content: space-around;
-        padding-left: 15vw;
+        /*padding-left: 15vw;*/
 
-        padding-top: 4vh;
-        padding-bottom: 4vh;
+        /*padding-top: 4vh;*/
+        /*padding-bottom: 4vh;*/
     }
 
-    .sing-up-mobile > p {
+    .messages-mobile{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-weight: bold;
+        font-size: 2.5em;
+        color: #B60036;
+        font-family: "Segoe Print", sans-serif;
+    }
+
+    .sing-up-mobile > form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sing-up-mobile > form >p {
         font-size: 3em;
         font-weight: bold;
         font-family: "Segoe Print", sans-serif;
     }
 
 
-    .sing-up-mobile > label > input {
+    .sing-up-mobile > form > label > input {
         width: 70vw;
         height: 5vh;
 
@@ -378,8 +420,16 @@ button[name="sing-up-exit"] {
         border: 1px solid #707070;
     }
 
-    button[name="sing-up2"] {
-        width: 50vw;
+    .buttons-mobile{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        padding-right: 10vw;
+    }
+
+    button[name="sing-up2"], button[name="sing-up2-exit"] {
+        width: 45vw;
         height: 5vh;
         margin-left: 10vw;
         margin-top: 5vh;
@@ -394,17 +444,19 @@ button[name="sing-up-exit"] {
     }
 
 
-    button[name="sing-up2-exit"]{
-        width: 50vw;
-        height: 5vh;
-        margin-left: 10vw;
+    /*button[name="sing-up2-exit"]{*/
+    /*    width: 45vw;*/
+    /*    height: 5vh;*/
+    /*    margin-left: 10vw;*/
+    /*    margin-top: 5vh;*/
 
-        background: #33A1FD 0 0 no-repeat padding-box;
-        border-radius: 3em;
-        border: none;
 
-        font-weight: bold;
-        font-size: 3em;
-        font-family: "Segoe Print", sans-serif;
-    }
+    /*    background: #33A1FD 0 0 no-repeat padding-box;*/
+    /*    border-radius: 3em;*/
+    /*    border: none;*/
+
+    /*    font-weight: bold;*/
+    /*    font-size: 3em;*/
+    /*    font-family: "Segoe Print", sans-serif;*/
+    /*}*/
 }

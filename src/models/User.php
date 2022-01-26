@@ -8,10 +8,14 @@ class User{
     private $name;
     private $surname;
     private $phone;
+    private $address;
     private $profilePhotoPath;
 
+    const UPLOAD_DIRECTORY = '/../public/uploads/';
 
-    public function __construct($login, $password, $email, $name, $surname, $phone, $profilePhotoPath)
+
+
+    public function __construct($login, $password, $email, $name, $surname, $phone, $address = "")
     {
         $this->login = $login;
         $this->password = $password;
@@ -19,7 +23,18 @@ class User{
         $this->name = $name;
         $this->surname = $surname;
         $this->phone = $phone;
-        $this->profilePhotoPath = $profilePhotoPath;
+        $this->address = $address;
+        $this->profilePhotoPath = self::UPLOAD_DIRECTORY."brak.png";
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress($address): void
+    {
+        $this->address = $address;
     }
 
 
@@ -102,6 +117,8 @@ class User{
     {
         $this->idUser = $idUser;
     }
+
+
 
 
 }

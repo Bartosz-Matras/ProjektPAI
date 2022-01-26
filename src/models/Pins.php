@@ -23,6 +23,7 @@ class Pins{
     }
 
 
+
     public function getIdPin()
     {
         return $this->idPin;

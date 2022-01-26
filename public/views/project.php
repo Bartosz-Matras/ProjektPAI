@@ -6,7 +6,13 @@
     <script src="public/js/map.js" crossorigin="anonymous" defer></script>
     <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
     <script src="public/js/account-div.js" crossorigin="anonymous" defer></script>
+    <script src="public/js/pin-add-div.js" crossorigin="anonymous" defer></script>
 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
 
     <!-- MAPBOX LIBRARY CDN -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
@@ -59,7 +65,7 @@
                 </span>
             </button>
 
-            <button name="settings-button-2">
+            <button name="settings-button-2" onclick="showOptionsDiv2()">
                 <span class="settings-icon" style="color: white;">
                     <i class="fas fa-cog fa-6x"></i>
                 </span>
@@ -76,103 +82,13 @@
                         </div>
                         <div class="filters-bar-section">
                             <p>Filtry</p>
-                            <h3>Jedzenie:</h3>
+                            <?php foreach ($tags as $tag): ?>
                             <label class="container">
-                                Wedliny
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Pieczywo
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Sery
+                                <?= $tag->getTagName(); ?>
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="container">
-                                Dania
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Przetwory
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Słodycze
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Warzywa
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <h3>Napoje:</h3>
-                            <label class="container">
-                                Soki
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Piwo
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
@@ -190,143 +106,34 @@
                     <div class="profile2-filters">
                         <p>Filtry</p>
                         <div class="profile2-filters-div">
-                            <h3>Jedzenie:</h3>
+
                             <label class="container2">
                                 Wedliny
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-                            <label class="container2">
-                                Pieczywo
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Sery
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Dania
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Przetwory
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Słodycze
-                                <input type="checkbox" checked="checked">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Warzywa
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <h3>Napoje:</h3>
-                            <label class="container2">
-                                Soki
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Piwo
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                            <label class="container2">
-                                Wino
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
+
+
                         </div>
                     </div>
                 </div>
 
                 <div class="projects">
+                    <?php foreach ($pins as $pin): ?>
                     <div id="project-1">
                         <div class="image">
-                            <img src="public/img/first.svg" alt="">
+                            <img src="<?= $pin->getImage()?>" alt="">
                         </div>
                         <div class="informations">
-                            <h1>Robert Mazurek</h1>
+                            <h1><?= $pin->getTitle(); ?></h1>
                         </div>
                         <div class="text">
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                <?= $pin->getDescription(); ?>
                             </p>
                         </div>
                     </div>
-
-                    <div id="project-1">
-                        <div class="image">
-                            <img src="public/img/first.svg" alt="">
-                        </div>
-                        <div class="informations">
-                            <h1>Robert Mazurek</h1>
-                        </div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="project-1">
-                        <div class="image">
-                            <img src="public/img/first.svg" alt="">
-                        </div>
-                        <div class="informations">
-                            <h1>Robert Mazurek</h1>
-                        </div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            </p>
-                        </div>
-                    </div>
-
-                    <div id="project-1">
-                        <div class="image">
-                            <img src="public/img/first.svg" alt="">
-                        </div>
-                        <div class="informations">
-                            <h1>Robert Mazurek</h1>
-                        </div>
-                        <div class="text">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmodorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            </p>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
 
                 <dic class="search-tool">
@@ -378,58 +185,63 @@
                         </div>
                     </div>
                     <div class="data">
-                        <div class="data-flex">
-                            <div class="data-first">
-                                <div class="data-name">
-                                    <form action="account" method="post" id="account-div">
+                        <form method="post" action="account" id="account-div">
+                            <div class="data-flex">
+                                <div class="data-first">
+                                    <div class="data-name">
                                         <p>
-                                            Name:<br>
-                                            <input id="input-name" type="text" readonly="true">
+                                            Imie:<br>
+                                            <input id="input-name" name="input-name"  type="text" readonly="true" placeholder="Imie">
                                         </p>
-                                    </form>
-                                    <button name="edit-data" onclick="accountDiv('input-name')" >
-                                        <i class="far fa-edit fa-2x"></i>
-                                    </button>
+                                        <button name="edit-data" type="button" onclick="accountDiv('input-name')" >
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="data-surname">
+                                        <p>
+                                            Nazwisko: <br>
+                                            <input id="input-surname" name="input-surname" type="text" readonly="true" placeholder="Nazwisko">
+                                        </p>
+                                        <button name="edit-data" type="button" onclick="accountDiv('input-surname')">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="data-email">
+                                        <p>
+                                            Adres email: <br>
+                                            <input id="input-email" name="input-email" type="text" readonly="true" placeholder="Email">
+                                        </p>
+                                        <button name="edit-data" type="button" onclick="accountDiv('input-email')">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                    </div>
                                 </div>
-
-<!--                                <form action="account" method="post"-->
-                                <div class="data-surname">
-                                    <p>Nazwisko: <br>
-                                        Matras
-                                    </p>
-                                    <button name="edit-data">
-                                        <i class="far fa-edit fa-2x"></i>
-                                    </button>
-                                </div>
-                                <div class="data-email">
-                                    <p>email: <br>
-                                        bartosz.matras38@gmail.com
-                                    </p>
-                                    <button name="edit-data">
-                                        <i class="far fa-edit fa-2x"></i>
-                                    </button>
+                                <div class="data-second">
+                                    <div class="data-adress">
+                                        <p>
+                                            Adres: <br>
+                                            <input id="input-adress1" name="input-adress1" type="text" readonly="true" placeholder="Miasto"> <br>
+                                            <input id="input-adress2" name="input-adress2" type="text" readonly="true" placeholder="Ulica i nr. domu">
+                                        </p>
+                                        <button name="edit-data" type="button" onclick="accountDiv2('input-adress1', 'input-adress2')">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                    </div>
+                                    <div class="data-phone">
+                                        <p>
+                                            Numer telefonu: <br>
+                                            <input id="input-phone" name="input-phone" type="text" readonly="true" placeholder="Numer telefonu"> <br>
+                                        </p>
+                                        <button name="edit-data" type="button" onclick="accountDiv('input-phone')">
+                                            <i class="far fa-edit"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="data-second">
-                                <div class="data-adress">
-                                    <p>Adres: <br>
-                                        Krakow 12-345 <br>
-                                        ul. Krakowiaka 18b
-                                    </p>
-                                    <button name="edit-data">
-                                        <i class="far fa-edit fa-2x"></i>
-                                    </button>
-                                </div>
-                                <div class="data-phone">
-                                    <p>Numer telefonu: <br>
-                                        123 456 789
-                                    </p>
-                                    <button name="edit-data">
-                                        <i class="far fa-edit fa-2x"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
+                        <button name="save-data" type="submit" form="account-div">
+                            Save
+                        </button>
                     </div>
                 </div>
 
@@ -570,18 +382,26 @@
 
                     </div>
                     <div class="other-app2">
-                        <button name="buttonFb2">
-                            <i class="fab fa-facebook-f fa-4x"></i>
-                        </button>
-                        <button name="buttonMess2">
-                            <i class="fab fa-facebook-messenger fa-4x"></i>
-                        </button>
-                        <button name="buttonInstagram2">
-                            <i class="fab fa-instagram fa-4x"></i>
-                        </button>
-                        <button name="buttonTwitter2">
-                            <i class="fab fa-twitter fa-4x"></i>
-                        </button>
+                        <form action="https://www.facebook.com/">
+                            <button name="buttonFb2">
+                                <i class="fab fa-facebook-f fa-2x"></i>
+                            </button>
+                        </form>
+                        <form action="https://www.messenger.com/">
+                            <button name="buttonMess2">
+                                <i class="fab fa-facebook-messenger fa-2x"></i>
+                            </button>
+                        </form>
+                        <form action="https://www.instagram.com/">
+                            <button name="buttonInstagram2">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </button>
+                        </form>
+                        <form action="https://twitter.com/">
+                            <button name="buttonTwitter2">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </button>
+                        </form>
                     </div>
                     <div class="logout2">
                         <button name="buttonLogout2">
@@ -594,7 +414,7 @@
                 </div>
 
                 <div class="add-pin-div">
-                    <form method="post" action="addPin" ENCTYPE="multipart/form-data">
+                    <form id="form-pin-add" method="post" action="addPin" ENCTYPE="multipart/form-data">
                         <?php
                         if(isset($messages)){
                             foreach ($messages as $message){
@@ -607,18 +427,32 @@
 
                         </textarea>
                         <input name="title" type="text" placeholder="Enter title:">
-                        <input name="tags" type="text" placeholder="Enter tags:">
-                        <input name="upload-input" type="file">
 
-                        <div class="buttons-pin">
-                            <button name="button-add" type="submit">
-                                <p>Dodaj</p>
-                            </button>
-                            <button name="button-cancel">
-                                <p>Anuluj</p>
-                            </button>
+
+                        <div class="form-group">
+                            <select id="mul-select" class="mul-select" multiple>
+                                <?php $i = 0; ?>
+                                <?php foreach ($tags as $tag): ?>
+                                <option value="<?= $i++; ?>">
+                                    <?= $tag->getTagName(); ?>
+                                </option>
+                                <?php endforeach ?>
+                            </select>
                         </div>
+
+<!--                        <input name="tags" type="text" placeholder="Enter tags:">-->
+
+
+                        <input name="upload-input" type="file">
                     </form>
+                    <div class="buttons-pin">
+                        <button name="button-add" type="submit" form="form-pin-add">
+                            <p>Dodaj</p>
+                        </button>
+                        <button name="button-cancel" onclick="showAddPinDiv()">
+                            <p>Anuluj</p>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="add-pin-div2">
@@ -773,5 +607,6 @@
             </section>
         </main>
     </div>
+
     </body>
 </html>

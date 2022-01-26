@@ -22,11 +22,30 @@ class UserRepository extends Repository {
         ]);
     }
 
+    public function updateUser(User $user){
+
+        $data = [
+            'email' => $user->getEmail(),
+            'name' => $user->getName(),
+            'surname' => $user->getSurname(),
+            'phone' => $user->getPhone(),
+            'address' => $user->getAddress(),
+            'id_user' => $user->getIdUser()
+        ];
+
+        $stmt = $this->database->connect()->prepare('
+            UPDATE users SET email=:email, name=:name, surname=:surname, phone=:phone, address=:address WHERE id_user = :id_user
+        ');
+
+        $stmt->execute($data);
+    }
+
     public function getUser(string $login): ?User
     {
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM users WHERE login = :login
         ');
+
         $stmt->bindParam(':login', $login);
         $stmt->execute();
 
@@ -43,8 +62,34 @@ class UserRepository extends Repository {
             $user['name'],
             $user['surname'],
             $user['phone'],
+            $user['address'],
             $user['isUploaded']
         );
     }
 
+    public function getUserById($id_user): ?User
+    {
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM users WHERE id_user = :id_user
+        ');
+        $stmt->bindParam(':id_user', $id_user);
+        $stmt->execute();
+
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user == false) {
+            return null;
+        }
+
+        return new User(
+            $user['login'],
+            $user['password'],
+            $user['email'],
+            $user['name'],
+            $user['surname'],
+            $user['phone'],
+            $user['address'],
+            $user['isUploaded']
+        );
+    }
 }
