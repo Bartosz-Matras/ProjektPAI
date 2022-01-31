@@ -45,7 +45,6 @@ class ProjectController extends AppController{
 
             $imageUrl = self::UPLOAD_DIRECTORY.$_FILES['upload-input']['name'];
 
-            var_dump($_COOKIE["project"]);
 
             $pin = new Pins(7, $_POST['coordinates'] ,$_POST['title'], $_POST['pin-desc'], $imageUrl, $_POST['tags'], $_POST['address']);
             $this->pinRepository -> addPin($pin);
@@ -93,14 +92,14 @@ class ProjectController extends AppController{
             $name = $_POST["input-name"];
             $surname = $_POST["input-surname"];
             $email = $_POST["input-email"];
-            $town = $_POST["input-addres1"];
-            $street = $_POST["input-addres2"];
+            $address = $_POST["input-address"];
             $phone = $_POST["input-phone"];
-            $address = $town."/".$street;
 
-            $user = $this->userRepository->getUserById(7);
+            $userSession = Session::getInstance();
 
-            $user->setIdUser(7);
+            $user = $this->userRepository->getUserById($userSession->id);
+
+            $user->setIdUser($userSession->id);
 
             $user->setName($name);
             $user->setSurname($surname);
@@ -108,10 +107,18 @@ class ProjectController extends AppController{
             $user->setAddress($address);
             $user->setPhone($phone);
 
+            $userSession->email = $email;
+            $userSession->name = $name;
+            $userSession->surname = $surname;
+            $userSession->phone = $phone;
+            $userSession->address = $address;
+
             $this->userRepository->updateUser($user);
 
-            $this->render("project");
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/project");
 
+            $this->render("project");
         }
     }
 

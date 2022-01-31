@@ -18,11 +18,36 @@ fetch("/places").then(function (response){
     displayPlaces(places)
 })
 
+function displayPlaces(places){
+    for (const feature of places) {
+        // create a HTML element for each feature
+        const el = document.createElement('div');
+        el.className = 'marker';
+
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el)
+            .setLngLat(feature.coordinates.point)
+            .setPopup(
+                new mapboxgl.Popup({ offset: 25 }) // add popups
+                    .setHTML(
+                        `<div class="pin-info-h1">
+                            <h1>${feature.title}</h1>
+                        </div>
+                        <div class="pin-info-p">
+                            <p> 
+                                ${feature.description}
+                            </p>
+                        </div>`
+                    )
+            )
+            .addTo(map);
+    }
+}
 
 map.on('click', (e) => {
     const data = (e.lngLat.wrap());
     // console.log(data);
-    document.getElementById("coordinates-input").value =data;
+    document.getElementById("coordinates-input").value = `{\"point\": [${data.lng}, ${data.lat}]}`;
 
     getAddress(data);
 });
@@ -42,37 +67,8 @@ function getAddress(data){
         if (data.features.length > 0) {
             const address = data.features[0].place_name;
             document.getElementById("address-input").value = address;
-            // console.log(address);
         } else {
             document.getElementById("address-input").value = "Nie znaleziono adresu";
         }
     });
 }
-
-
-function displayPlaces(places){
-    for (const feature of places) {
-        // create a HTML element for each feature
-        const el = document.createElement('div');
-        el.className = 'marker';
-
-        // make a marker for each feature and add to the map
-        new mapboxgl.Marker(el)
-            .setLngLat(feature.coordinates.point)
-            .setPopup(
-                new mapboxgl.Popup({ offset: 25 }) // add popups
-                    .setHTML(
-                        `<div class="pin-info-h1">
-                        <h1>${feature.title}</h1>
-                    </div>
-                    <div class="pin-info-p">
-                        <p> 
-                            ${feature.description}
-                        </p>
-                    </div>`
-                    )
-            )
-            .addTo(map);
-    }
-}
-

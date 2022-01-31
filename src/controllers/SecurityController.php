@@ -3,6 +3,7 @@
 require_once  'AppController.php';
 require_once  __DIR__.'/../models/User.php';
 require_once __DIR__.'/../repository/UserRepository.php';
+require_once __DIR__.'/../service/Session.php';
 
 class SecurityController extends AppController
 {
@@ -40,11 +41,22 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
+        $userSession = Session::getInstance();
+        $userSession->id = $user->getIdUser();
+        $userSession->login = $user->getLogin();
+        $userSession->password = $user->getPassword();
+        $userSession->email = $user->getEmail();
+        $userSession->name = $user->getName();
+        $userSession->surname = $user->getSurname();
+        $userSession->phone = $user->getPhone();
+        $userSession->address = $user->getAddress();
+        $userSession->profilePhotoPath = $user->getProfilePhotoPath();
+
 
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/project");
 
-       return $this->render('project');
+//       return $this->render('project');
     }
 
     public function register()

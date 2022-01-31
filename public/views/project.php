@@ -172,17 +172,17 @@
                 </div>
 
                 <div class="account-div">
+                    <?php
+                        $userSession = Session::getInstance();
+                    ?>
                     <div class="photo-div">
                         <button name="close-button" onclick="showAccountDiv()">
                             <i class="fas fa-times fa-3x"></i>
                         </button>
                         <div class="photo">
                             <div class="photo-icon">
-                                <span class="photo-color" style="color: white">
-                                    <i class="fas fa-user-edit fa-5x"></i>
-                                </span>
+                                <img src="<?= $userSession->profilePhotoPath ?>" alt="">
                             </div>
-                            <h1>Bartosz Matras</h1>
                         </div>
                     </div>
                     <div class="data">
@@ -192,7 +192,7 @@
                                     <div class="data-name">
                                         <p>
                                             Imie:<br>
-                                            <input id="input-name" name="input-name"  type="text" readonly="true" placeholder="Imie">
+                                            <input id="input-name" name="input-name"  type="text" readonly="true" placeholder="Imie" value="<?= $userSession->name ?>">
                                         </p>
                                         <button name="edit-data" type="button" onclick="accountDiv('input-name')" >
                                             <i class="far fa-edit"></i>
@@ -201,7 +201,7 @@
                                     <div class="data-surname">
                                         <p>
                                             Nazwisko: <br>
-                                            <input id="input-surname" name="input-surname" type="text" readonly="true" placeholder="Nazwisko">
+                                            <input id="input-surname" name="input-surname" type="text" readonly="true" placeholder="Nazwisko" value="<?= $userSession->surname ?>">
                                         </p>
                                         <button name="edit-data" type="button" onclick="accountDiv('input-surname')">
                                             <i class="far fa-edit"></i>
@@ -210,7 +210,7 @@
                                     <div class="data-email">
                                         <p>
                                             Adres email: <br>
-                                            <input id="input-email" name="input-email" type="text" readonly="true" placeholder="Email">
+                                            <input id="input-email" name="input-email" type="text" readonly="true" placeholder="Email" value="<?= $userSession->email ?>">
                                         </p>
                                         <button name="edit-data" type="button" onclick="accountDiv('input-email')">
                                             <i class="far fa-edit"></i>
@@ -221,17 +221,16 @@
                                     <div class="data-adress">
                                         <p>
                                             Adres: <br>
-                                            <input id="input-adress1" name="input-adress1" type="text" readonly="true" placeholder="Miasto"> <br>
-                                            <input id="input-adress2" name="input-adress2" type="text" readonly="true" placeholder="Ulica i nr. domu">
+                                            <input id="input-address" name="input-address" type="text" readonly="true" placeholder="Adres" value="<?= $userSession->address ?>"> <br>
                                         </p>
-                                        <button name="edit-data" type="button" onclick="accountDiv2('input-adress1', 'input-adress2')">
+                                        <button name="edit-data" type="button" onclick="accountDiv('input-address')">
                                             <i class="far fa-edit"></i>
                                         </button>
                                     </div>
                                     <div class="data-phone">
                                         <p>
                                             Numer telefonu: <br>
-                                            <input id="input-phone" name="input-phone" type="text" readonly="true" placeholder="Numer telefonu"> <br>
+                                            <input id="input-phone" name="input-phone" type="text" readonly="true" placeholder="Numer telefonu" value="<?= $userSession->phone ?>"> <br>
                                         </p>
                                         <button name="edit-data" type="button" onclick="accountDiv('input-phone')">
                                             <i class="far fa-edit"></i>

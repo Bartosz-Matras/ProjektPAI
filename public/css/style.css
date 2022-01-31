@@ -559,17 +559,23 @@ button[name="close-button"] {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    position: absolute;
+    overflow: hidden;
 }
 
-.photo-color{
-    margin-left: 2em;
+.photo-icon > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    /*transform: translate(0, 0);*/
+
 }
 
-.photo > h1{
-    margin-top: 0.5em;
-    font-size: 2em;
-    color: white;
-}
+
+
 
 
 .data{
