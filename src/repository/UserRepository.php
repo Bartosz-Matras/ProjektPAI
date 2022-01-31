@@ -55,7 +55,7 @@ class UserRepository extends Repository {
             return null;
         }
 
-        return new User(
+        $returnUser = new User(
             $user['login'],
             $user['password'],
             $user['email'],
@@ -63,9 +63,13 @@ class UserRepository extends Repository {
             $user['surname'],
             $user['phone'],
             $user['address'],
-            $user['isUploaded']
         );
+
+        $returnUser->setIdUser($user['id_user']);
+
+        return $returnUser;
     }
+
 
     public function getUserById($id_user): ?User
     {
@@ -89,7 +93,6 @@ class UserRepository extends Repository {
             $user['surname'],
             $user['phone'],
             $user['address'],
-            $user['isUploaded']
         );
     }
 }

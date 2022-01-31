@@ -24,7 +24,9 @@ class SecurityController extends AppController
         $login = $_POST["login"];
         $password = md5($_POST["password"]);
 
+
         $user = $this -> userRepository -> getUser($login);
+
 
         if (!$user){
             return $this->render('login', ['messages' => ["User not exist!"]]);
@@ -38,10 +40,11 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Wrong password!']]);
         }
 
+
         $url = "http://$_SERVER[HTTP_HOST]";
         header("Location: {$url}/project");
 
-        return $this->render('project');
+       return $this->render('project');
     }
 
     public function register()

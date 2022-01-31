@@ -64,3 +64,8 @@ function clearSearchDiv(){
     document.getElementById("search-form").reset();
 }
 
+
+function destroySession(){
+
+
+}

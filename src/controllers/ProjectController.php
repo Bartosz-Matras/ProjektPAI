@@ -45,9 +45,9 @@ class ProjectController extends AppController{
 
             $imageUrl = self::UPLOAD_DIRECTORY.$_FILES['upload-input']['name'];
 
+            var_dump($_COOKIE["project"]);
 
-            //TODO
-            $pin = new Pins(7, 255, 255, $_POST['title'], $_POST['pin-desc'], $imageUrl, $_POST['tags']);
+            $pin = new Pins(7, $_POST['coordinates'] ,$_POST['title'], $_POST['pin-desc'], $imageUrl, $_POST['tags'], $_POST['address']);
             $this->pinRepository -> addPin($pin);
 
             $url = "http://$_SERVER[HTTP_HOST]";
@@ -63,6 +63,13 @@ class ProjectController extends AppController{
         header("Location: {$url}/project");
 
         return $this->render("project");
+    }
+
+    public function places(){
+        header('Content-type: application/json');
+        http_response_code(200);
+
+        echo json_encode($this->pinRepository->getPins2());
     }
 
     private function validate(array $file) : bool
@@ -102,12 +109,6 @@ class ProjectController extends AppController{
             $user->setPhone($phone);
 
             $this->userRepository->updateUser($user);
-//
-//            echo '<script type="text/JavaScript">
-//                 document.getElementsByClassName("account-div")[0].style.display = "flex";
-//                 </script>'
-//            ;
-
 
             $this->render("project");
 

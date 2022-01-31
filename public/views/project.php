@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.css">
     <script src="https://cdn.jsdelivr.net/gh/bbbootstrap/libraries@main/choices.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
     <!-- MAPBOX LIBRARY CDN -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
@@ -428,25 +429,35 @@
                         </textarea>
                         <input name="title" type="text" placeholder="Enter title:">
 
+<!--                        <div class="form-group" >-->
+<!--                            <select name="tags" size="4" multiple="multiple">-->
+<!--                                --><?php //$i = 0; ?>
+<!--                                --><?php //foreach ($tags as $tag): ?>
+<!--                                <option value="--><?//= $i++; ?><!--">-->
+<!--                                    --><?//= $tag->getTagName(); ?>
+<!--                                </option>-->
+<!--                                --><?php //endforeach ?>
+<!--                            </select>-->
+<!--                        </div>-->
 
                         <div class="form-group">
-                            <select id="mul-select" class="mul-select" multiple>
-                                <?php $i = 0; ?>
+                            <select id="mul-select" name="mul-select" class="mul-select" multiple>
+                                <?php $i = 1; ?>
                                 <?php foreach ($tags as $tag): ?>
-                                <option value="<?= $i++; ?>">
+                                <option value="<?= $i++; ?>" class="dupa">
                                     <?= $tag->getTagName(); ?>
                                 </option>
                                 <?php endforeach ?>
                             </select>
                         </div>
 
-<!--                        <input name="tags" type="text" placeholder="Enter tags:">-->
-
+                        <input id="coordinates-input" name="coordinates" type="text" placeholder="coordinates:" readonly>
+                        <input id="address-input" name="address" type="text" placeholder="address:" readonly>
 
                         <input name="upload-input" type="file">
                     </form>
                     <div class="buttons-pin">
-                        <button name="button-add" type="submit" form="form-pin-add">
+                        <button name="button-add" id="button-add" type="submit" form="form-pin-add">
                             <p>Dodaj</p>
                         </button>
                         <button name="button-cancel" onclick="showAddPinDiv()">
@@ -472,74 +483,6 @@
                         <button name="button-cancel2">
                             <p>Anuluj</p>
                         </button>
-                    </div>
-                </div>
-
-                <div class="pin-info">
-                    <div class="pin-info-left">
-                        <div class="pin-info-photo">
-
-                        </div>
-                        <div class="pin-info-star">
-                            <i class="fas fa-star s1"></i>
-                            <i class="fas fa-star s2"></i>
-                            <i class="fas fa-star s3"></i>
-                            <i class="fas fa-star s4"></i>
-                            <i class="fas fa-star s5"></i>
-                        </div>
-                        <button name="pin-info-exit">
-                            <i class="fas fa-times fa-3x"></i>
-                        </button>
-                    </div>
-                    <div class="pin-info-right">
-                        <div class="pin-info-h1">
-                            <h1>Robert Mazurek</h1>
-                        </div>
-                        <div class="pin-info-p">
-                            <p> Sprzedam 4 kurczaki z własnej hodowli.
-                                Kurczaki z wolnego wybiegu. Cena: 20zł/szt
-                                Dane kontaktowe: 123 456 789
-                                Robert.mazurek@gmail.com
-                            </p>
-                        </div>
-                        <div class="pin-info-h2">
-                            <h2>ul. Krowoderska 10</h2>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pin-info2">
-                    <div class="pin-info-left2">
-                        <div class="pin-info-photo2">
-
-                        </div>
-                        <div class="pin-info-star2">
-                            <i class="fas fa-star fa-5x s12"></i>
-                            <i class="fas fa-star fa-5x s22"></i>
-                            <i class="fas fa-star fa-5x s32"></i>
-                            <i class="fas fa-star fa-5x s42"></i>
-                            <i class="fas fa-star fa-5x s52"></i>
-                        </div>
-                        <button name="pin-info-exit2">
-                            <i class="fas fa-times fa-7x"></i>
-                        </button>
-                    </div>
-                    <div class="pin-info-right2">
-                        <div class="pin-info-right2-div">
-                            <div class="pin-info2-h1">
-                                <h1>Robert Mazurek</h1>
-                            </div>
-                            <div class="pin-info2-p">
-                                <p> Sprzedam 4 kurczaki z własnej hodowli.
-                                    Kurczaki z wolnego wybiegu. Cena: 20zł/szt
-                                    Dane kontaktowe: 123 456 789
-                                    Robert.mazurek@gmail.com
-                                </p>
-                            </div>
-                            <div class="pin-info2-h2">
-                                <h2>ul. Krowoderska 10</h2>
-                            </div>
-                        </div>
                     </div>
                 </div>
 

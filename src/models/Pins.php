@@ -3,26 +3,35 @@
 class Pins{
     private $idPin;
     private $idUser;
-    private $x;
-    private $y;
+    private $coordinates;
     private $title;
     private $description;
     private $image;
     private $tags;
+    private $address;
 
 
-    public function __construct($idUser, $x, $y, $title, $description, $image, $tags)
+    public function __construct($idUser, $coordinates, $title, $description, $image, $tags, $address)
     {
         $this->idUser = $idUser;
-        $this->x = $x;
-        $this->y = $y;
+        $this->coordinates = $coordinates;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
         $this->tags = $tags;
+        $this->address = $address;
     }
 
 
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress($address): void
+    {
+        $this->address = $address;
+    }
 
     public function getIdPin()
     {
@@ -44,24 +53,14 @@ class Pins{
         $this->idUser = $idUser;
     }
 
-    public function getX()
+    public function getCoordinates()
     {
-        return $this->x;
+        return $this->coordinates;
     }
 
-    public function setX($x)
+    public function setCoordinates($coordinates): void
     {
-        $this->x = $x;
-    }
-
-    public function getY()
-    {
-        return $this->y;
-    }
-
-    public function setY($y)
-    {
-        $this->y = $y;
+        $this->coordinates = $coordinates;
     }
 
     public function getTitle()
