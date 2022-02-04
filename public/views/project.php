@@ -7,6 +7,7 @@
     <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
     <script src="public/js/account-div.js" crossorigin="anonymous" defer></script>
     <script src="public/js/pin-add-div.js" crossorigin="anonymous" defer></script>
+    <script src="public/js/search.js" crossorigin="anonymous" defer></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -24,7 +25,7 @@
     <div class="base-container">
         <header>
             <div class="bars">
-                <button name="bars-button">
+                <button name="bars-button" onclick="showFilters2()">
                     <span class="bars-icon" style="color: white;">
                         <i class="fas fa-bars fa-6x"></i>
                     </span>
@@ -36,17 +37,15 @@
             </div>
 
             <div class="search-town">
-                <form action="project" method="POST" id="search-form">
-                    <div class="search-wrap">
-                        <button class="wysz">
-                            <i class="fas fa-search fa-2x"></i>
-                        </button>
-                        <input name="search" type="text" placeholder="Szukaj miejsca">
-                        <button class="exit" onclick="clearSearchDiv()">
-                            <i class="fas fa-times-circle fa-2x"></i>
-                        </button>
-                    </div>
-                </form>
+                <div class="search-wrap">
+                    <button class="wysz">
+                        <i class="fas fa-search fa-2x"></i>
+                    </button>
+                    <input name="search" type="text" placeholder="Szukaj">
+                    <button class="exit" onclick="clearSearchDiv()">
+                        <i class="fas fa-times-circle fa-2x"></i>
+                    </button>
+                </div>
             </div>
 
             <div class="profile">
@@ -95,26 +94,28 @@
                 </div>
 
                 <div class="filters2">
+                    <?php
+                        $userSession = Session::getInstance();
+                    ?>
                     <div class="profile2-image">
-                        <img src="public/img/face.svg" alt="">
+                        <img src="<?= $userSession->profilePhotoPath ?>" alt="">
                     </div>
                     <div class="profile2-labelName">
-                        <p>Bartosz</p>
+                        <p><?= $userSession->name ?></p>
                     </div>
-                    <button name="profile2Name">
+                    <button name="profile2Name" onclick="showAccount2()">
                         <p>Edytuj profil </p>
                     </button>
                     <div class="profile2-filters">
                         <p>Filtry</p>
                         <div class="profile2-filters-div">
-
+                            <?php foreach ($tags as $tag): ?>
                             <label class="container2">
-                                Wedliny
+                                <?= $tag->getTagName(); ?>
                                 <input type="checkbox">
                                 <span class="checkmark"></span>
                             </label>
-
-
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
@@ -137,14 +138,11 @@
                     <?php endforeach ?>
                 </div>
 
-                <dic class="search-tool">
-                    <i class="fas fa-map-marker-alt fa-4x"></i>
+                <div class="search-tool">
+                    <i class="fas fa-map-marker-alt"></i>
                     <input name="search-app" type="text" placeholder="Szukaj miejsca">
-                    <button name="microphone">
-                        <i class="fas fa-microphone fa-4x"></i>
-                    </button>
-
-                </dic>
+                    <div class="empty-space"></div>
+                </div>
 
                 <div class="mapa">
                     <div id="map">
@@ -154,8 +152,8 @@
                             </button>
                         </div>
                         <div class="pin-2">
-                            <button name="add-pin-2">
-                                <i class="fas fa-plus-square fa-5x"></i>
+                            <button name="add-pin-2" onclick="showAddPinDiv2()">
+                                <i class="fas fa-plus-square"></i>
                             </button>
                         </div>
                         <div class="local">
@@ -165,7 +163,7 @@
                         </div>
                         <div class="local-2">
                             <button name="localization-2">
-                                <i class="fas fa-location-arrow fa-5x"></i>
+                                <i class="fas fa-location-arrow"></i>
                             </button>
                         </div>
                     </div>
@@ -247,62 +245,27 @@
 
                 <div class="bottom-bar">
                     <button name="scroll">
-                        <i class="fas fa-grip-lines fa-5x"></i>
+                        <i class="fas fa-grip-lines"></i>
                     </button>
+
                     <div class="info-projects">
-                        <label for="10 Wyników">
-                            10 Wyników
-                            <i class="fas fa-pizza-slice"></i>
-                        </label>
                         <div class="info-projects-div">
+                            <?php foreach ($pins as $pin): ?>
                             <div class="project-2">
                                 <div class="project2-photo-name">
-                                    <img src="public/img/photo.svg">
+                                    <img src="<?= $pin->getImage()?>">
                                     <div class="project2-name">
-                                        <p>Robert Mazurek</p>
+                                        <p><?= $pin->getTitle(); ?></p>
                                     </div>
                                 </div>
                                 <div class="project2-desc">
                                     <label for="description">
-                                        Mam na sprzedaż 4 kurczaki z
-                                        <button name="description-more">
-                                            <i class="fas fa-ellipsis-h fa-2x"></i>
-                                        </button>
+                                        <?= $pin->getDescription(); ?>
                                     </label>
                                 </div>
                             </div>
-                            <div class="project-2">
-                                <div class="project2-photo-name">
-                                    <img src="public/img/photo.svg">
-                                    <div class="project2-name">
-                                        <p>Robert Mazurek</p>
-                                    </div>
-                                </div>
-                                <div class="project2-desc">
-                                    <label for="description">
-                                        Mam na sprzedaż 4 kurczaki z
-                                        <button name="description-more">
-                                            <i class="fas fa-ellipsis-h fa-2x"></i>
-                                        </button>
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="project-2">
-                                <div class="project2-photo-name">
-                                    <img src="public/img/photo.svg">
-                                    <div class="project2-name">
-                                        <p>Robert Mazurek</p>
-                                    </div>
-                                </div>
-                                <div class="project2-desc">
-                                    <label for="description">
-                                        Mam na sprzedaż 4 kurczaki z
-                                        <button name="description-more">
-                                            <i class="fas fa-ellipsis-h fa-2x"></i>
-                                        </button>
-                                    </label>
-                                </div>
-                            </div>
+                            <?php endforeach ?>
+
                         </div>
                     </div>
                 </div>
@@ -355,7 +318,7 @@
                         </form>
                     </div>
                     <div class="logout">
-                        <form action="login.php">
+                        <form action="logout" method="post" id="form-logout">
                             <button name="buttonLogout">
                                 <p>Wyloguj.</p>
                             </button>
@@ -369,13 +332,13 @@
                 <div class="options2">
                     <div class="notification">
                         <button name="bell">
-                            <i class="fas fa-bell fa-4x"></i>
+                            <i class="fas fa-bell"></i>
                         </button>
                         <button name="support">
-                            <i class="fas fa-question fa-4x"></i>
+                            <i class="fas fa-question"></i>
                         </button>
                         <button name="dark-mode">
-                            <i class="fas fa-moon fa-4x"></i>
+                            <i class="fas fa-moon"></i>
                         </button>
                     </div>
                     <div class="break">
@@ -389,24 +352,26 @@
                         </form>
                         <form action="https://www.messenger.com/">
                             <button name="buttonMess2">
-                                <i class="fab fa-facebook-messenger fa-2x"></i>
+                                <i class="fab fa-facebook-messenger"></i>
                             </button>
                         </form>
                         <form action="https://www.instagram.com/">
                             <button name="buttonInstagram2">
-                                <i class="fab fa-instagram fa-2x"></i>
+                                <i class="fab fa-instagram"></i>
                             </button>
                         </form>
                         <form action="https://twitter.com/">
                             <button name="buttonTwitter2">
-                                <i class="fab fa-twitter fa-2x"></i>
+                                <i class="fab fa-twitter"></i>
                             </button>
                         </form>
                     </div>
                     <div class="logout2">
-                        <button name="buttonLogout2">
-                            <p>Wyloguj.</p>
-                        </button>
+                        <form action="logout" method="post" id="form-logout">
+                            <button name="buttonLogout2">
+                                <p>Wyloguj.</p>
+                            </button>
+                        </form>
                     </div>
                     <div class="producent-info2">
                         <p>Train 1.0.1 <br> Stworzono w Kraków</p>
@@ -428,16 +393,6 @@
                         </textarea>
                         <input name="title" type="text" placeholder="Enter title:">
 
-<!--                        <div class="form-group" >-->
-<!--                            <select name="tags" size="4" multiple="multiple">-->
-<!--                                --><?php //$i = 0; ?>
-<!--                                --><?php //foreach ($tags as $tag): ?>
-<!--                                <option value="--><?//= $i++; ?><!--">-->
-<!--                                    --><?//= $tag->getTagName(); ?>
-<!--                                </option>-->
-<!--                                --><?php //endforeach ?>
-<!--                            </select>-->
-<!--                        </div>-->
 
                         <div class="form-group">
                             <select id="mul-select" name="mul-select" class="mul-select" multiple>
@@ -449,6 +404,8 @@
                                 <?php endforeach ?>
                             </select>
                         </div>
+                        <input name="tags3" id="tags3" type="text" >
+
 
                         <input id="coordinates-input" name="coordinates" type="text" placeholder="coordinates:" readonly>
                         <input id="address-input" name="address" type="text" placeholder="address:" readonly>
@@ -479,76 +436,100 @@
                         <button name="button-add2">
                             <p>Dodaj</p>
                         </button>
-                        <button name="button-cancel2">
+                        <button name="button-cancel2" onclick="showAddPinDiv2()">
                             <p>Anuluj</p>
                         </button>
                     </div>
                 </div>
 
                 <div class="profile2">
+                    <?php
+                        $userSession = Session::getInstance();
+                    ?>
                     <div class="profile2-photo-exit">
                         <button name="profile2-photo">
-                            <img src="public/img/face.svg">
+                            <img src="<?= $userSession->profilePhotoPath ?>">
                         </button>
-                        <button name="profile2-exit">
+                        <button name="profile2-exit" onclick="showAccount2()">
                             <i class="fas fa-times fa-5x"></i>
                         </button>
                     </div>
 
-                    <div class="profile2-info">
-
-                        <div class="profile2-info-name">
-                            <p>Imie: <br>
-                                Bartosz
-                            </p>
-                            <button name="profile2-edit-data-name">
-                                <i class="far fa-edit fa-3x"></i>
-                            </button>
-                        </div>
-
-                        <div class="profile2-info-surname">
-                            <p>Nazwisko: <br>
-                                Matras
-                            </p>
-                            <button name="profile2-edit-data-surname">
-                                <i class="far fa-edit fa-3x"></i>
-                            </button>
-                        </div>
-
-                        <div class="profile2-info-email">
-                            <p>Email: <br>
-                                bartosz.matras38@gmail.com
-                            </p>
-                            <button name="profile2-edit-data-email">
-                                <i class="far fa-edit fa-3x"></i>
-                            </button>
-                        </div>
-
-                        <div class="profile2-info-adres">
-                            <p>Adres: <br>
-                                Krakow 12-345 <br>
-                                ul. Krakowska 18b
-                            </p>
-                            <button name="profile2-edit-data-adres">
-                                <i class="far fa-edit fa-3x"></i>
-                            </button>
-                        </div>
-
-                        <div class="profile2-info-phone">
-                            <p>Numer telefonu: <br>
-                                123 456 789
-                            </p>
-                            <button name="profile2-edit-data-phone">
-                                <i class="far fa-edit fa-3x"></i>
-                            </button>
-                        </div>
-
+                    <div class="save-data2-div">
+                        <button name="save-data2" form="account-div2">
+                            Zapisz
+                        </button>
                     </div>
+                    <form method="post" action="account2" id="account-div2">
+                        <div class="profile2-info">
+                            <div class="profile2-info-name">
+                                <p>Imie: <br>
+                                    <input id="input-name2" name="input-name2" type="text" readonly="true" placeholder="Imie" value="<?= $userSession->name ?>">
+                                </p>
+                                <button name="profile2-edit-data-name" type="button" onclick="accountDiv('input-name2')">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+
+                            <div class="profile2-info-surname">
+                                <p>Nazwisko: <br>
+                                    <input id="input-surname2" name="input-surname2" type="text" readonly="true" placeholder="Surname" value="<?= $userSession->surname ?>">
+                                </p>
+                                <button name="profile2-edit-data-surname" type="button" onclick="accountDiv('input-surname2')">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+
+                            <div class="profile2-info-email">
+                                <p>Email: <br>
+                                    <input id="input-email2" name="input-email2" type="email" readonly="true" placeholder="Email" value="<?= $userSession->email ?>">
+                                </p>
+                                <button name="profile2-edit-data-email" type="button" onclick="accountDiv('input-email2')">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+
+                            <div class="profile2-info-address">
+                                <p>Adres: <br>
+                                    <input id="input-address2" name="input-address2" type="text" readonly="true" placeholder="Address" value="<?= $userSession->address ?>">
+                                </p>
+                                <button name="profile2-edit-data-address" type="button" onclick="accountDiv('input-address2')">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+
+                            <div class="profile2-info-phone">
+                                <p>Numer telefonu: <br>
+                                    <input id="input-phone2" name="input-phone2" type="text" readonly="true" placeholder="Phone" value="<?= $userSession->phone ?>">
+
+                                </p>
+                                <button name="profile2-edit-data-phone" type="button" onclick="accountDiv('input-phone2')">
+                                    <i class="far fa-edit"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
 
                 </div>
             </section>
         </main>
     </div>
-
     </body>
+
+    <template id="project-template">
+        <div id="project-1">
+            <div class="image">
+                <img src="" alt="">
+            </div>
+            <div class="informations">
+                <h1>title</h1>
+            </div>
+            <div class="text">
+                <p>description</p>
+            </div>
+        </div>
+    </template>
 </html>
+
+

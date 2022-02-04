@@ -3,6 +3,7 @@
     <link rel="stylesheet" type="text/css" href="public/css/style_login.css">
     <title>LOGIN PAGE</title>
     <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
+    <script src="public/js/script.js" crossorigin="anonymous" defer></script>
 </head>
 
 <body>
@@ -81,17 +82,12 @@
             </div>
             <form action="register" method="POST" id="register-form">
                 <div class="sing-up-div">
-                    <p>Login:</p>
                     <input name="login" type="text" placeholder="Login">
-                    <p>Hasło:</p>
-                    <input name="haslo" type="text" placeholder="Hasło" type="password">
-                    <p>Imie:</p>
+                    <input name="haslo"  placeholder="Hasło" type="password">
+                    <input name="haslo2" placeholder="Powtórz hasło" type="password">
                     <input name="imie" type="text" placeholder="Imie">
-                    <p>Nazwisko:</p>
                     <input name="nazwisko" type="text" placeholder="Nazwisko">
-                    <p>Email:</p>
                     <input name="email" type="text" placeholder="Email">
-                    <p>Numer telefonu:</p>
                     <input name="numerTelefonu" type="text" placeholder="Numer telefonu">
                 </div>
             </form>
@@ -117,30 +113,13 @@
                 ?>
             </div>
             <form action="register" method="POST" id="register-form2">
-                <p>Podaj login:</p>
-                <label>
-                    <input name="login" type="text" placeholder="Login">
-                </label>
-                <p>Podaj hasło:</p>
-                <label>
-                    <input name="haslo" type="text" placeholder="Hasło">
-                </label>
-                <p>Podaj imie:</p>
-                <label>
-                    <input name="imie" type="text" placeholder="Imie">
-                </label>
-                <p>Podaj nazwisko:</p>
-                <label>
-                    <input name="nazwisko" type="text" placeholder="Nazwisko">
-                </label>
-                <p>Podaj email:</p>
-                <label>
-                    <input name="email" type="text" placeholder="Email">
-                </label>
-                <p>Podaj numer telefonu:</p>
-                <label>
-                    <input name="numerTelefonu" type="text" placeholder="Numer telefonu">
-                </label>
+                <input name="login" type="text" placeholder="Login">
+                <input name="haslo"  placeholder="Hasło" type="password">
+                <input name="haslo2" placeholder="Powtórz hasło" type="password">
+                <input name="imie" type="text" placeholder="Imie">
+                <input name="nazwisko" type="text" placeholder="Nazwisko">
+                <input name="email" type="text" placeholder="Email">
+                <input name="numerTelefonu" type="text" placeholder="Numer telefonu">
             </form>
             <div class="buttons-mobile">
                 <button name="sing-up2" form="register-form2">

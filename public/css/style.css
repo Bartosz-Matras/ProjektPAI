@@ -1138,7 +1138,9 @@ textarea[name="pin-desc"]{
     color: #B60036;
 }
 
-
+#tags3{
+    display: none;
+}
 
 .add-pin-div > form > input[name="title"]{
     width: 26vw;
@@ -1386,6 +1388,10 @@ button[name="button-cancel"]:hover{
         justify-content: space-around;
     }
 
+    .search-tool > i {
+        font-size: 4em;
+    }
+
     input[name='search-app']{
         border: none;
         background: transparent;
@@ -1399,18 +1405,6 @@ button[name="button-cancel"]:hover{
         color: white;
     }
 
-    button[name="microphone"]{
-        width: 5vw;
-        height: 5vh;
-        background: #707070 0 0 no-repeat padding-box;
-        border: none;
-
-        color: white;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     .mapa{
         width: 100vw;
@@ -1455,10 +1449,15 @@ button[name="button-cancel"]:hover{
         color: #707070;
 
         position: absolute;
-        top: 50vh;
+        top: 45vh;
         left: 88vw;
         z-index: 2;
     }
+
+    button[name='add-pin-2'] > i {
+        font-size: 4em;
+    }
+
 
     #map > .local-2{
         width: 10vw;
@@ -1482,11 +1481,14 @@ button[name="button-cancel"]:hover{
         color: #707070;
 
         position: absolute;
-        top: 45vh;
+        top: 40vh;
         left: 88vw;
         z-index: 1;
     }
 
+    button[name='localization-2'] > i {
+        font-size: 5em;
+    }
 
     #map > .local{
         display: none;
@@ -1515,7 +1517,7 @@ button[name="button-cancel"]:hover{
 
     .bottom-bar{
         width: 100vw;
-        height: 35vh;
+        height: 40vh;
 
         display: flex;
         align-items: center;
@@ -1526,7 +1528,7 @@ button[name="button-cancel"]:hover{
         border-radius: 2em 2em 0 0;
         position: absolute;
         z-index: 2;
-        top: 65vh;
+        top: 60vh;
     }
 
     button[name="scroll"]{
@@ -1542,43 +1544,25 @@ button[name="button-cancel"]:hover{
         align-items: center;
     }
 
+    button[name="scroll"] > i {
+        font-size: 5em;
+    }
+
     .info-projects{
         width: 100vw;
-        height: 30vh;
+        height: 35vh;
 
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
         padding-left: 5vw;
-        padding-top: 2vh;
     }
 
-    .info-projects > label{
-        width: 50vw;
-        height: 5vh;
-
-        background: #2176FF 0 0 no-repeat padding-box;
-        border-radius: 2em;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        color: white;
-
-        text-align: left;
-        font-size: 5em;
-    }
-
-    .info-projects > label > i{
-        padding-left: 2vw;
-        color: #FEE545;
-    }
 
     .info-projects-div{
         width: 90vw;
-        height: 22vh;
+        height: 33vh;
 
         direction: ltr;
         overflow: auto;
@@ -1595,32 +1579,39 @@ button[name="button-cancel"]:hover{
 
 
     .project-2{
-        width: 55vw;
-        height: 18vh;
+        min-width: 80vw;
+        height: 30vh;
         margin-right: 4vw;
         color: black;
 
         background: #FDCA40 0 0 no-repeat padding-box;
         border-radius: 2em;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
     }
 
     .project2-photo-name{
-        width: 55vw;
+        width: 78vw;
         height: 8vh;
 
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
+        padding-left: 1vw;
+        padding-right: 1vw;
     }
 
     .project2-photo-name > img{
-        width: 25vw;
-        height: 6vh;
+        width: 35vw;
+        height: 7vh;
     }
 
     .project2-name{
-        width: 25vw;
-        height: 8vh;
+        width: 35vw;
+        height: 7vh;
         font-size: 1.5em;
         font-weight: bold;
         font-family: "Segoe Print", serif;
@@ -1635,8 +1626,8 @@ button[name="button-cancel"]:hover{
     }
 
     .project2-desc{
-        width: 55vw;
-        height: 10vh;
+        width: 75vw;
+        height: 22vh;
 
         display: flex;
         justify-content: center;
@@ -1644,8 +1635,8 @@ button[name="button-cancel"]:hover{
     }
 
     .project2-desc > label{
-        width: 50vw;
-        height: 8vh;
+        width: 72vw;
+        height: 20vh;
 
         text-align: center;
         font-weight: bold;
@@ -1656,17 +1647,10 @@ button[name="button-cancel"]:hover{
         border-radius: 1em;
     }
 
-    button[name="description-more"]{
-        width: 6vw;
-        height: 4vh;
-        background: #BBBF31 0 0 no-repeat padding-box;
-        border: none;
-    }
 
 
     .profile2{
         display: none;
-        /*display: flex;*/
         flex-direction: column;
         width: 100vw;
         height: 90vh;
@@ -1679,7 +1663,7 @@ button[name="button-cancel"]:hover{
 
     .profile2-photo-exit{
         width: 100vw;
-        height: 30vh;
+        height: 25vh;
 
         display: flex;
         flex-direction: column;
@@ -1696,7 +1680,7 @@ button[name="button-cancel"]:hover{
 
     button[name="profile2-photo"] > img{
         width: 50vw;
-        height: 25vh;
+        height: 20vh;
     }
 
     button[name="profile2-exit"]{
@@ -1712,6 +1696,22 @@ button[name="button-cancel"]:hover{
         border-radius: 2em;
     }
 
+    .save-data2-div{
+        width: 100vw;
+        height: 5vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button[name="save-data2"]{
+        font-size: 4em;
+        width: 25vw;
+        height: 5vh;
+        border-radius: 2em;
+    }
+
     .profile2-info{
         width: 100vw;
         height: 60vh;
@@ -1720,6 +1720,8 @@ button[name="button-cancel"]:hover{
         flex-direction: column;
         align-items: flex-start;
     }
+
+
 
     .profile2-info-name{
         width: 90vw;
@@ -1739,16 +1741,43 @@ button[name="button-cancel"]:hover{
         border-bottom: solid gray;
     }
 
-    .profile2-info-name > p{
-        font-size: 2.5em;
+    .profile2-info-name > p {
+        font-size: 3em;
+    }
+
+    .profile2-info-name > p > input{
+        width: 75vw;
+        height: 5vh;
+
+        font-size: 1em;
+        font-family: "Segoe Print", serif;
+        border: none;
+        background: #31393C 0 0 no-repeat padding-box;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .profile2-info-name > p > input:focus{
+        color: white;
+    }
+
+    .profile2-info-name > p > input:not(:checked){
+        color: white;
     }
 
     .profile2-info-name > button[name="profile2-edit-data-name"]{
         border: none;
-        background: none;
+        background: #31393C 0 0 no-repeat padding-box;
         color: white;
         padding-top: 3vh;
+        margin-left: 3vw;
     }
+
+    .profile2-info-name > button[name="profile2-edit-data-name"] > i {
+        padding-top: 2vh;
+        font-size: 5em;
+    }
+
 
 
     .profile2-info-surname{
@@ -1761,6 +1790,7 @@ button[name="button-cancel"]:hover{
         padding-left: 2vw;
         padding-right: 5vw;
         margin-top: 1vh;
+
         color: white;
         display: flex;
         align-items: center;
@@ -1768,19 +1798,103 @@ button[name="button-cancel"]:hover{
         border-bottom: solid gray;
     }
 
-    .profile2-info-surname > p{
-        font-size: 2.5em;
+    .profile2-info-surname > p {
+        font-size: 3em;
+    }
+
+    .profile2-info-surname > p > input{
+        width: 75vw;
+        height: 5vh;
+
+        font-size: 1em;
+        font-family: "Segoe Print", serif;
+        border: none;
+        background: #31393C 0 0 no-repeat padding-box;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .profile2-info-surname > p > input:focus{
+        color: white;
+    }
+
+    .profile2-info-surname > p > input:not(:checked){
+        color: white;
     }
 
     .profile2-info-surname > button[name="profile2-edit-data-surname"]{
         border: none;
-        background: none;
+        background: #31393C 0 0 no-repeat padding-box;
         color: white;
         padding-top: 3vh;
+        margin-left: 3vw;
+    }
+
+    .profile2-info-surname > button[name="profile2-edit-data-surname"] > i {
+        padding-top: 2vh;
+        font-size: 5em;
     }
 
 
-    .profile2-info-email{
+
+    .profile2-info-email {
+        width: 90vw;
+        height: 11vh;
+
+        font-size: 1.5em;
+        font-family: "Segoe Print", serif;
+        margin-left: 5vw;
+        padding-left: 2vw;
+        padding-right: 5vw;
+        margin-top: 1vh;
+
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: solid gray;
+    }
+
+    .profile2-info-email  > p {
+        font-size: 3em;
+    }
+
+    .profile2-info-email  > p > input{
+        width: 75vw;
+        height: 5vh;
+
+        font-size: 1em;
+        font-family: "Segoe Print", serif;
+        border: none;
+        background: #31393C 0 0 no-repeat padding-box;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .profile2-info-email  > p > input:focus{
+        color: white;
+    }
+
+    .profile2-info-email  > p > input:not(:checked){
+        color: white;
+    }
+
+    .profile2-info-email  > button[name="profile2-edit-data-email"]{
+        border: none;
+        background: #31393C 0 0 no-repeat padding-box;
+        color: white;
+        padding-top: 3vh;
+        margin-left: 3vw;
+    }
+
+    .profile2-info-email  > button[name="profile2-edit-data-email"] > i {
+        padding-top: 2vh;
+        font-size: 5em;
+    }
+
+
+
+    .profile2-info-address{
         width: 90vw;
         height: 11vh;
 
@@ -1797,45 +1911,43 @@ button[name="button-cancel"]:hover{
         border-bottom: solid gray;
     }
 
-    .profile2-info-email > p{
-        font-size: 2.5em;
+    .profile2-info-address > p {
+        font-size: 3em;
     }
 
-    .profile2-info-email > button[name="profile2-edit-data-email"]{
-        border: none;
-        background: none;
-        color: white;
-        padding-top: 3vh;
-    }
+    .profile2-info-address > p > input{
+        width: 75vw;
+        height: 5vh;
 
-
-    .profile2-info-adres{
-        width: 90vw;
-        height: 11vh;
-
-        font-size: 1.5em;
+        font-size: 1em;
         font-family: "Segoe Print", serif;
-        margin-left: 5vw;
-        padding-left: 2vw;
-        padding-right: 5vw;
-        margin-top: 1vh;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-bottom: solid gray;
-    }
-
-    .profile2-info-adres > p{
-        font-size: 2.5em;
-    }
-
-    .profile2-info-adres > button[name="profile2-edit-data-adres"]{
         border: none;
-        background: none;
+        background: #31393C 0 0 no-repeat padding-box;
+        margin-top: 1vh;
+        margin-bottom: 1vh;
+    }
+
+    .profile2-info-address > p > input:focus{
+        color: white;
+    }
+
+    .profile2-info-address > p > input:not(:checked){
+        color: white;
+    }
+
+    .profile2-info-address > button[name="profile2-edit-data-address"]{
+        border: none;
+        background: #31393C 0 0 no-repeat padding-box;
         color: white;
         padding-top: 3vh;
+        margin-left: 3vw;
     }
+
+    .profile2-info-address > button[name="profile2-edit-data-address"] > i {
+        padding-top: 2vh;
+        font-size: 5em;
+    }
+
 
 
     .profile2-info-phone{
@@ -1854,21 +1966,45 @@ button[name="button-cancel"]:hover{
         justify-content: space-between;
     }
 
-    .profile2-info-phone > p{
-        font-size: 2.5em;
+    .profile2-info-phone > p {
+        font-size: 3em;
+    }
+
+    .profile2-info-phone > p > input{
+        width: 75vw;
+        height: 5vh;
+
+        font-size: 1em;
+        font-family: "Segoe Print", serif;
+        border: none;
+        background: #31393C 0 0 no-repeat padding-box;
+        margin-top: 1vh;
+    }
+
+    .profile2-info-phone > p > input:focus{
+        color: white;
+    }
+
+    .profile2-info-phone > p > input:not(:checked){
+        color: white;
     }
 
     .profile2-info-phone > button[name="profile2-edit-data-phone"]{
         border: none;
-        background: none;
+        background: #31393C 0 0 no-repeat padding-box;
         color: white;
         padding-top: 3vh;
+        margin-left: 3vw;
+    }
+
+    .profile2-info-phone > button[name="profile2-edit-data-phone"] > i {
+        padding-top: 2vh;
+        font-size: 5em;
     }
 
 
 
     .options2{
-        display: none;
         width: 65vw;
         height: 90vh;
         background: transparent linear-gradient(180deg, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
@@ -1879,7 +2015,7 @@ button[name="button-cancel"]:hover{
         top: 10vh;
         left: 35vw;
 
-        /*display: flex;*/
+        display: none;
         justify-content: center;
         align-items: center;
         flex-direction: column;
@@ -1904,12 +2040,20 @@ button[name="button-cancel"]:hover{
         border: solid black;
     }
 
+    button[name="bell"] > i {
+        font-size: 5em;
+    }
+
     button[name="support"]{
         width: 10vw;
         height: 5vh;
 
         border-radius: 2em;
         border: solid black;
+    }
+
+    button[name="support"] > i {
+        font-size: 5em;
     }
 
     button[name="dark-mode"]{
@@ -1919,6 +2063,11 @@ button[name="button-cancel"]:hover{
         border-radius: 2em;
         border: solid black;
     }
+
+    button[name="dark-mode"] > i {
+        font-size: 5em;
+    }
+
 
     .break{
         width: 65vw;
@@ -1943,6 +2092,10 @@ button[name="button-cancel"]:hover{
         border-radius: 2em 0 0 2em;
     }
 
+    button[name="buttonFb2"] > i {
+        font-size: 5em;
+    }
+
     button[name="buttonMess2"] {
         width: 14vw;
         height: 6vh;
@@ -1951,6 +2104,9 @@ button[name="button-cancel"]:hover{
         background: #215AFF 0 0 no-repeat padding-box;
     }
 
+    button[name="buttonMess2"] > i {
+        font-size: 5em;
+    }
 
     button[name="buttonInstagram2"] {
         width: 14vw;
@@ -1960,6 +2116,9 @@ button[name="button-cancel"]:hover{
         background: #215AFF 0 0 no-repeat padding-box;
     }
 
+    button[name="buttonInstagram2"] > i {
+        font-size: 5em;
+    }
 
     button[name="buttonTwitter2"] {
         width: 14vw;
@@ -1970,6 +2129,9 @@ button[name="button-cancel"]:hover{
         background: #215AFF 0 0 no-repeat padding-box;
     }
 
+    button[name="buttonTwitter2"] > i {
+        font-size: 5em;
+    }
 
     .logout2{
         width: 65vw;
@@ -2010,7 +2172,6 @@ button[name="button-cancel"]:hover{
 
 
     .filters2{
-        display: none;
         width: 60vw;
         height: 90vh;
 
@@ -2021,7 +2182,7 @@ button[name="button-cancel"]:hover{
         background: transparent linear-gradient(180deg, #33A1FD 0%, #2176FF 100%) 0 0 no-repeat padding-box;
         border-radius: 0 2em 2em 0;
 
-        /*display: flex;*/
+        display: none;
         align-items: center;
         flex-direction: column;
     }
@@ -2178,20 +2339,17 @@ button[name="button-cancel"]:hover{
     }
 
     .add-pin-div2{
-        display: none;
-
         width: 100vw;
-        height: 60vh;
+        height: 90vh;
 
         position: absolute;
         z-index: 3;
-        top: 15vh;
+        top: 10vh;
 
         background: #96AFB8 0 0 no-repeat padding-box;
         border: 1px solid #707070;
-        border-radius: 2em;
 
-        /*display: flex;*/
+        display: none;
         justify-content: flex-start;
         align-items: center;
         flex-direction: column;

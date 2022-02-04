@@ -7,18 +7,16 @@ class Pins{
     private $title;
     private $description;
     private $image;
-    private $tags;
     private $address;
 
 
-    public function __construct($idUser, $coordinates, $title, $description, $image, $tags, $address)
+    public function __construct($idUser, $coordinates, $title, $description, $image, $address)
     {
         $this->idUser = $idUser;
         $this->coordinates = $coordinates;
         $this->title = $title;
         $this->description = $description;
         $this->image = $image;
-        $this->tags = $tags;
         $this->address = $address;
     }
 
@@ -91,15 +89,5 @@ class Pins{
     public function setImage($image): void
     {
         $this->image = $image;
-    }
-
-    public function getTags()
-    {
-        return $this->tags;
-    }
-
-    public function setTags($tags): void
-    {
-        $this->tags = $tags;
     }
 }

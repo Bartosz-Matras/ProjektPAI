@@ -150,15 +150,16 @@ button[name="buttonZ2"] {
 }
 
 .messages-sing{
-    height: 5vh;
+    height: 3vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 2vh;
+    padding-top: 3vh;
+    margin-bottom: 3vh;
 
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1.5em;
     color: #B60036;
 }
 
@@ -172,19 +173,11 @@ button[name="buttonZ2"] {
 }
 
 
-.sing-up-div > p {
-    padding-top: 3vh;
-    padding-bottom: 0.5vh;
-    font-size: 1.3em;
-    font-weight: bold;
-    font-family: "Segoe Print", sans-serif;
-}
-
 .sing-up-div > input {
-    width: 20vw;
+    width: 25vw;
     height: 5vh;
 
-    margin-bottom: 1vh;
+    margin-bottom: 5vh;
     padding-left: 1vw;
     font-size: 1em;
     font-weight: bold;
@@ -194,6 +187,13 @@ button[name="buttonZ2"] {
     border-radius: 1em;
 }
 
+
+.no-valid {
+    border: 10px solid red;
+    border-radius: 2em;
+    box-shadow: 0 0 0.9em red;
+    outline: none;
+}
 
 .sing-up-buttons{
     width: 30vw;
@@ -206,10 +206,10 @@ button[name="buttonZ2"] {
 }
 
 button[name="sing-up"] {
-    width: 10vw;
+    width: 13vw;
     height: 5vh;
 
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     font-family: "Segoe Print", sans-serif;
 
@@ -219,10 +219,10 @@ button[name="sing-up"] {
 }
 
 button[name="sing-up-exit"] {
-    width: 10vw;
+    width: 13vw;
     height: 5vh;
 
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     font-family: "Segoe Print", sans-serif;
 
@@ -398,18 +398,14 @@ button[name="sing-up-exit"] {
         flex-direction: column;
     }
 
-    .sing-up-mobile > form >p {
-        font-size: 3em;
-        font-weight: bold;
-        font-family: "Segoe Print", sans-serif;
-    }
 
-
-    .sing-up-mobile > form > label > input {
-        width: 70vw;
+    .sing-up-mobile > form >  input {
+        width: 84vw;
         height: 5vh;
 
         padding-left: 5vw;
+        margin-bottom: 2vh;
+        margin-top: 2vh;
 
         font-size: 3em;
         font-weight: bold;
@@ -419,6 +415,13 @@ button[name="sing-up-exit"] {
         border-radius: 2em;
         border: 1px solid #707070;
     }
+
+    /*.no-valid2 {*/
+    /*    border: 5px solid red;*/
+    /*    border-radius: 2em;*/
+    /*    box-shadow: 0 0 0.2em red;*/
+    /*    outline: none;*/
+    /*}*/
 
     .buttons-mobile{
         display: flex;

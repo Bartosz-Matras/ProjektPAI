@@ -9,8 +9,8 @@ class PinRepository extends Repository {
 
     public function addPin(Pins $pins){
         $stmt = $this->database->connect()->prepare('
-            INSERT INTO pins (id_user, coordinates, title, description, photo_path, tags, address)
-            VALUES (?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO pins (id_user, coordinates, title, description, photo_path, address)
+            VALUES (?, ?, ?, ?, ?, ?)
         ');
 
         $stmt->execute([
@@ -19,7 +19,6 @@ class PinRepository extends Repository {
             $pins->getTitle(),
             $pins->getDescription(),
             $pins->getImage(),
-            $pins->getTags(),
             $pins->getAddress()
         ]);
     }
@@ -43,12 +42,40 @@ class PinRepository extends Repository {
                 $pin['title'],
                 $pin['description'],
                 $pin['photo_path'],
-                $pin['tags'],
                 $pin['address']
             );
         }
 
         return $result;
+    }
+
+
+    public function getPinByTitle($title){
+
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM pins WHERE title = :title;
+        ');
+
+        $stmt->bindParam(':title', $title);
+        $stmt->execute();
+
+        $data = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        return $data['idPin'];
+    }
+
+    public function getProjectByTitle(string $searchString){
+        $searchString = '%' . strtolower($searchString) . '%';
+
+        $stmt = $this->database->connect()->prepare('
+            SELECT * FROM pins WHERE LOWER(title) LIKE :search OR LOWER(description) LIKE :search
+        ');
+
+        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function getPins2() : array

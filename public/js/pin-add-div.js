@@ -4,7 +4,8 @@
 $(document).ready(function(){
     const element = document.getElementById("mul-select");
     const element2 = document.getElementById("button-add");
-    var tab = [];
+    const element3 = document.getElementById("tags3");
+    let st = "";
 
     var multipleCancelButton = new Choices('#mul-select', {
         removeItemButton: true,
@@ -14,29 +15,10 @@ $(document).ready(function(){
     });
 
     element.addEventListener("addItem", event => {
-        // console.log(event.detail.value);
-        tab.push(event.detail.value);
+        st += event.detail.value + ",";
     })
 
-    element2.addEventListener("sendItems", event => {
-        createCookie(tab, 2);
+    element2.addEventListener("click", event => {
+        element3.value = st;
     })
-
 });
-
-function createCookie(value, days){
-    var expires;
-    var name = "project";
-
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        expires = "; expires=" + date.toGMTString();
-    }
-    else {
-        expires = "";
-    }
-
-    document.cookie = escape(name) + "=" +
-        escape(value) + expires + "; path=/";
-}

@@ -13,7 +13,10 @@ Routing::post('register', 'SecurityController');
 Routing::get('project', 'ProjectController');
 Routing::post('addPin', 'ProjectController');
 Routing::post('account', 'ProjectController');
+Routing::post('account2', 'ProjectController');
+Routing::post('logout', 'ProjectController');
 Routing::get('places', 'ProjectController');
+Routing::post('search', 'ProjectController');
 
 
 Routing::run($path);

@@ -59,13 +59,36 @@ function showAddPinDiv(){
     }
 }
 
+function showAddPinDiv2(){
+    const x = document.getElementsByClassName("add-pin-div2")[0];
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+
 
 function clearSearchDiv(){
     document.getElementById("search-form").reset();
 }
 
 
-function destroySession(){
+function showFilters2(){
+    const x = document.getElementsByClassName("filters2")[0];
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
 
-
+function showAccount2(){
+    const x = document.getElementsByClassName("profile2")[0];
+    if (x.style.display === "none") {
+        x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
 }
