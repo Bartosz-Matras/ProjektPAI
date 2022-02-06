@@ -1,19 +1,10 @@
-// const d = [...document.querySelectorAll('.filters-bar-section input')]
-//     .filter(checkbox => checkbox.checked)
-//     .map(checkbox => checkbox.id);
-
-
-// console.log(d);
-
-
-// console.log(elements);
-// elements.forEach(myFunction);
-
-
-// function myFunction(item){
-//     console.log(item.childNodes);
-//     // for (var i = 0; i < item.childNodes.length; i++){
-//     //     console.log(item.childNodes[i] === 'input');
-//     // }
-//     // if (item.childNodes.nodeName)
-// }
+$("input:checkbox").on('click', function() {
+    var $box = $(this);
+    if ($box.is(":checked")) {
+        var group = "input:checkbox[name='" + $box.attr("name") + "']";
+        $(group).prop("checked", false);
+        $box.prop("checked", true);
+    } else {
+        $box.prop("checked", false);
+    }
+});

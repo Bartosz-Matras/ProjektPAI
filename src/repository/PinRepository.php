@@ -66,18 +66,31 @@ class PinRepository extends Repository {
     }
 
     public function getProjectByTitle(string $searchString, array $tags){
-        $searchString = '%' . strtolower($searchString) . '%';
+        if (empty($tags)) {
+            $searchString = '%' . strtolower($searchString) . '%';
 
-        $stmt = $this->database->connect()->prepare('
-            SELECT * FROM pins WHERE LOWER(title) LIKE :search OR LOWER(description) LIKE :search
-        ');
+            $stmt = $this->database->connect()->prepare('
+                SELECT * FROM pins WHERE LOWER(title) LIKE :search OR LOWER(description) LIKE :search
+            ');
 
-        $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
-        $stmt->execute();
+            $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+            $stmt->execute();
 
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }else{
+            $searchString = '%' . strtolower($searchString) . '%';
 
+            $stmt = $this->database->connect()->prepare('
+                select distinct pins.*  from pins join pins_tags pt on pins."idPin" = pt.id_pin
+                WHERE (LOWER(title) LIKE :search OR LOWER(description) LIKE :search or pt.id_tag = :tags)
+            ');
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
+            $stmt->bindParam(':tags', $tags[0], PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }
     }
 
     public function getPins2() : array

@@ -86,7 +86,7 @@
                             <?php foreach ($tags as $tag): ?>
                             <label class="container" >
                                 <?= $tag->getTagName(); ?>
-                                <input type="checkbox" id="<?= $tag->getIdTag(); ?>">
+                                <input type="checkbox" class="radio" name="tag" id="<?= $tag->getIdTag(); ?>">
                                 <span class="checkmark"></span>
                             </label>
                             <?php endforeach ?>
