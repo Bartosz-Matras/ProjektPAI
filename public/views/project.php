@@ -8,6 +8,7 @@
     <script src="public/js/account-div.js" crossorigin="anonymous" defer></script>
     <script src="public/js/pin-add-div.js" crossorigin="anonymous" defer></script>
     <script src="public/js/search.js" crossorigin="anonymous" defer></script>
+    <script src="public/js/filters-search.js" crossorigin="anonymous" defer></script>
 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
@@ -80,12 +81,12 @@
                         <div class="info-bar">
                             <p>Znaleziono 10 wyników</p>
                         </div>
-                        <div class="filters-bar-section">
-                            <p>Filtry</p>
+                        <p>Filtry</p>
+                        <div class="filters-bar-section" id="filters-bar-section">
                             <?php foreach ($tags as $tag): ?>
-                            <label class="container">
+                            <label class="container" >
                                 <?= $tag->getTagName(); ?>
-                                <input type="checkbox">
+                                <input type="checkbox" id="<?= $tag->getIdTag(); ?>">
                                 <span class="checkmark"></span>
                             </label>
                             <?php endforeach ?>
@@ -140,7 +141,7 @@
 
                 <div class="search-tool">
                     <i class="fas fa-map-marker-alt"></i>
-                    <input name="search-app" type="text" placeholder="Szukaj miejsca">
+                    <input name="search-app" type="text" placeholder="Szukaj">
                     <div class="empty-space"></div>
                 </div>
 
@@ -159,11 +160,6 @@
                         <div class="local">
                             <button name="localization">
                                 <i class="fas fa-location-arrow fa-2x"></i>
-                            </button>
-                        </div>
-                        <div class="local-2">
-                            <button name="localization-2">
-                                <i class="fas fa-location-arrow"></i>
                             </button>
                         </div>
                     </div>
@@ -398,7 +394,7 @@
                             <select id="mul-select" name="mul-select" class="mul-select" multiple>
                                 <?php $i = 1; ?>
                                 <?php foreach ($tags as $tag): ?>
-                                <option value="<?= $i++; ?>" class="dupa">
+                                <option value="<?= $i++; ?>" >
                                     <?= $tag->getTagName(); ?>
                                 </option>
                                 <?php endforeach ?>
@@ -423,17 +419,33 @@
                 </div>
 
                 <div class="add-pin-div2">
-                    <label for="pin2-desc">Dodaj opis:</label>
-                    <textarea id="pin2-desc" name="pin2-desc" rows="1" cols="1">
+                    <form id="form-pin-add2" method="post" action="addPin2" ENCTYPE="multipart/form-data">
 
-                    </textarea>
-                    <input name="tags" type="text" placeholder="Enter tags after the comma:">
-                    <button name="upload-photo2">
-                        <i class="fas fa-upload fa-2x"></i>
-                        <p>Upload file</p>
-                    </button>
+                        <label for="pin2-desc">Dodaj opis:</label>
+                        <textarea id="pin2-desc" name="pin2-desc" rows="1" cols="1">
+
+                        </textarea>
+                        <input name="title2" type="text" placeholder="Enter title:">
+
+                        <div class="form-group">
+                            <select id="mul-select2" name="mul-select2" class="mul-select" multiple>
+                                <?php $i = 1; ?>
+                                <?php foreach ($tags as $tag): ?>
+                                    <option value="<?= $i++; ?>" >
+                                        <?= $tag->getTagName(); ?>
+                                    </option>
+                                <?php endforeach ?>
+                            </select>
+                        </div>
+                        <input name="tags33" id="tags33" type="text" >
+
+                        <input id="coordinates-input2" name="coordinates2" type="text" placeholder="coordinates:" readonly>
+                        <input id="address-input2" name="address2" type="text" placeholder="address:" readonly>
+
+                        <input name="upload-input2" type="file">
+                    </form>
                     <div class="buttons-pin2">
-                        <button name="button-add2">
+                        <button name="button-add2" id="button-add2" type="submit" form="form-pin-add2">
                             <p>Dodaj</p>
                         </button>
                         <button name="button-cancel2" onclick="showAddPinDiv2()">
@@ -530,6 +542,21 @@
             </div>
         </div>
     </template>
-</html>
 
+    <template id="project-template2">
+        <div class="project-2">
+            <div class="project2-photo-name">
+                <img src="">
+                <div class="project2-name">
+                    <p>Title</p>
+                </div>
+            </div>
+            <div class="project2-desc">
+                <label for="description">
+                    Description
+                </label>
+            </div>
+        </div>
+    </template>
+</html>
 

@@ -79,6 +79,47 @@ class ProjectController extends AppController{
         return $this->render("project");
     }
 
+    public function addPin2(){
+
+        if($this->isPost() && is_uploaded_file($_FILES['upload-input2']['tmp_name']) && $this->validate($_FILES['upload-input2'])){
+            move_uploaded_file(
+                $_FILES['upload-input2']['tmp_name'],
+                dirname(__DIR__).self::UPLOAD_DIRECTORY.$_FILES['upload-input2']['name']
+            );
+
+            $imageUrl = self::UPLOAD_DIRECTORY.$_FILES['upload-input2']['name'];
+
+            $userSession = Session::getInstance();
+            $id_user = $userSession->id;
+
+            $pin = new Pins($id_user, $_POST['coordinates2'] ,$_POST['title2'], $_POST['pin2-desc'], $imageUrl, $_POST['address2']);
+            $this->pinRepository -> addPin($pin);
+
+            $id_pin = $this->pinRepository->getPinByTitle($_POST['title2']);
+
+            $tags = explode(',', $_POST['tags33']);
+
+            $max = sizeof($tags);
+
+            for ($i = 0; $i < $max-1; $i++){
+                $this->pinTagsRepository->addPinTag((int) $tags[$i], $id_pin);
+            }
+
+            $url = "http://$_SERVER[HTTP_HOST]";
+            header("Location: {$url}/project");
+
+            return $this->render("project", [
+                'pins' => $this->pinRepository->getPins(),
+                'messages' => $this->messages
+            ]);
+        }
+
+        $url = "http://$_SERVER[HTTP_HOST]";
+        header("Location: {$url}/project");
+
+        return $this->render("project");
+    }
+
     public function places(){
         header('Content-type: application/json');
         http_response_code(200);
@@ -190,10 +231,11 @@ class ProjectController extends AppController{
             $content = trim(file_get_contents("php://input"));
             $decoded = json_decode($content, true);
 
+
             header('Content-type: application/json');
             http_response_code(200);
 
-            echo json_encode($this->pinRepository->getProjectByTitle($decoded['search']));
+            echo json_encode($this->pinRepository->getProjectByTitle($decoded['search'], $decoded['tags']));
         }
     }
 

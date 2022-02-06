@@ -182,6 +182,16 @@ section.project{
     font-family: "Segoe Print", serif;
 }
 
+.filters-bar > p{
+    margin-top: 1vh;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    color: white;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: "Segoe Print", serif;
+}
+
 .filters-bar-section {
     width: 20vw;
     height: 70vh;
@@ -197,13 +207,7 @@ section.project{
     display: none;
 }
 
-.filters-bar-section > p{
-    margin-top: 1vh;
-    padding-bottom: 1vw;
-    font-size: 2em;
-    font-weight: bold;
-    font-family: "Segoe Print", serif;
-}
+
 
 
 .container{
@@ -471,13 +475,6 @@ button[name='add-pin']{
     z-index: 1;
 }
 
-#map > .local-2{
-    display: none;
-}
-
-button[name='localization-2'] {
-    display: none;
-}
 
 #map > .local{
     width: 3vw;
@@ -1440,8 +1437,8 @@ button[name="button-cancel"]:hover{
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 10vw;
-        height: 10vw;
+        width: 12vw;
+        height: 12vw;
 
         border-radius: 2em;
         border: none;
@@ -1449,46 +1446,16 @@ button[name="button-cancel"]:hover{
         color: #707070;
 
         position: absolute;
-        top: 45vh;
-        left: 88vw;
+        top: 44vh;
+        left: 87vw;
         z-index: 2;
     }
 
     button[name='add-pin-2'] > i {
-        font-size: 4em;
+        font-size: 6em;
     }
 
 
-    #map > .local-2{
-        width: 10vw;
-        height: 10vw;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin: 1em;
-    }
-
-    button[name='localization-2'] {
-        width: 10vw;
-        height: 10vw;
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 2em;
-        border: none;
-        background: #cccccc;
-        color: #707070;
-
-        position: absolute;
-        top: 40vh;
-        left: 88vw;
-        z-index: 1;
-    }
-
-    button[name='localization-2'] > i {
-        font-size: 5em;
-    }
 
     #map > .local{
         display: none;
@@ -1600,17 +1567,18 @@ button[name="button-cancel"]:hover{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 1vw;
-        padding-right: 1vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 
     .project2-photo-name > img{
-        width: 35vw;
+        width: 22vw;
         height: 7vh;
+        border-radius: 2em;
     }
 
     .project2-name{
-        width: 35vw;
+        width: 50vw;
         height: 7vh;
         font-size: 1.5em;
         font-weight: bold;
@@ -2356,17 +2324,25 @@ button[name="button-cancel"]:hover{
         text-align: left;
     }
 
-    label[for="pin2-desc"] {
+    .add-pin-div2 > form {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .add-pin-div2 > form > label[for="pin2-desc"] {
         color: black;
         font-size: 4em;
         font-weight: bold;
-        padding-bottom: 2vh;
-        padding-top: 2vh;
+        padding-bottom: 1vh;
+        padding-top: 1vh;
     }
 
-    textarea[name="pin2-desc"] {
+    .add-pin-div2 > form > textarea[name="pin2-desc"] {
         width: 90vw;
-        height: 40vh;
+        height: 30vh;
         resize: none;
         font-size: 3em;
         padding-left: 5vw;
@@ -2375,12 +2351,13 @@ button[name="button-cancel"]:hover{
         border: none;
         background: #326063 0 0 no-repeat padding-box;
         border-radius: 2em;
-        margin-bottom: 2vh;
+        margin-bottom: 1vh;
     }
 
-    .add-pin-div2 > input {
+    .add-pin-div2 > form > input[name="title2"] {
         width: 90vw;
         height: 6vh;
+        color: black;
 
         background: #326063 0 0 no-repeat padding-box;
         border: none;
@@ -2394,29 +2371,94 @@ button[name="button-cancel"]:hover{
         font-size: 3em;
     }
 
-    .add-pin-div2 > input::placeholder{
+    .add-pin-div2 > input[name="title2"]::placeholder{
         color: black;
-
         display: flex;
     }
 
-    button[name="upload-photo2"] {
-        width: 50vw;
-        height: 8vh;
+    .add-pin-div2 > form > .form-group{
+        width: 90vw;
+        height: 6vh;
+        font-size: 3em;
 
-        border: none;
+    }
+
+    .mul-select2 {
+        width: 100%;
+        height: 75%;
         border-radius: 2em;
         background: #326063 0 0 no-repeat padding-box;
+        color: #B60036;
+    }
+
+    #tags33{
+        display: none;
+    }
+
+    .add-pin-div2 > form > input[name="coordinates2"] {
+        width: 90vw;
+        height: 6vh;
+        color: black;
+
+        background: #326063 0 0 no-repeat padding-box;
+        border: none;
+        border-radius: 2em;
+
+        display: flex;
+        align-items: center;
+
+        padding-left: 5vw;
+        margin-bottom: 2vh;
+        font-size: 3em;
+    }
+
+    .add-pin-div2 > form > input[name="address2"] {
+        width: 90vw;
+        height: 6vh;
+        color: black;
+
+        background: #326063 0 0 no-repeat padding-box;
+        border: none;
+        border-radius: 2em;
+
+        display: flex;
+        align-items: center;
+
+        padding-left: 5vw;
+        margin-bottom: 2vh;
+        font-size: 3em;
+    }
+
+    .add-pin-div2 > form > input[name="upload-input2"] {
+        width: 60vw;
+        height: 4vh;
+
+        background: #326063 0 0 no-repeat padding-box;
+        border-radius: 2em;
+        padding-top: 1vh;
+        padding-left: 10vw;
+
+        font-size: 2em;
+        font-weight: bold;
 
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    button[name="upload-photo2"] > p {
-        padding-left: 1em;
-        font-size: 3em;
+    .add-pin-div2 > form > input[name="upload-input2"]::file-selector-button {
+        background: #326063 0 0 no-repeat padding-box;
+        width: 20vw;
+        height: 2vh;
+        border-radius: 2em;
     }
+
+    .add-pin-div2 > form > input[name="upload-input2"]::-webkit-file-upload-button{
+        color: #B60036;
+    }
+
+
+
 
     .buttons-pin2 {
         width: 60vw;

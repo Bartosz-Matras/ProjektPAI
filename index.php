@@ -12,6 +12,7 @@ Routing::post('login', 'SecurityController');
 Routing::post('register', 'SecurityController');
 Routing::get('project', 'ProjectController');
 Routing::post('addPin', 'ProjectController');
+Routing::post('addPin2', 'ProjectController');
 Routing::post('account', 'ProjectController');
 Routing::post('account2', 'ProjectController');
 Routing::post('logout', 'ProjectController');

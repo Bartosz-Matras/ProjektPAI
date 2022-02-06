@@ -48,6 +48,7 @@ map.on('click', (e) => {
     const data = (e.lngLat.wrap());
     // console.log(data);
     document.getElementById("coordinates-input").value = `{\"point\": [${data.lng}, ${data.lat}]}`;
+    document.getElementById("coordinates-input2").value = `{\"point\": [${data.lng}, ${data.lat}]}`;
 
     getAddress(data);
 });
@@ -67,8 +68,10 @@ function getAddress(data){
         if (data.features.length > 0) {
             const address = data.features[0].place_name;
             document.getElementById("address-input").value = address;
+            document.getElementById("address-input2").value = address;
         } else {
             document.getElementById("address-input").value = "Nie znaleziono adresu";
+            document.getElementById("address-input2").value = "Nie znaleziono adresu";
         }
     });
 }

@@ -65,7 +65,7 @@ class PinRepository extends Repository {
         return $data['idPin'];
     }
 
-    public function getProjectByTitle(string $searchString){
+    public function getProjectByTitle(string $searchString, array $tags){
         $searchString = '%' . strtolower($searchString) . '%';
 
         $stmt = $this->database->connect()->prepare('
@@ -74,6 +74,8 @@ class PinRepository extends Repository {
 
         $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stmt->execute();
+
+
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
