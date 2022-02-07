@@ -12,7 +12,7 @@ require_once __DIR__.'/../repository/PinTagsRepository.php';
 
 class ProjectController extends AppController{
 
-    const MAX_FILE_SIZE = 1024*1024;
+    const MAX_FILE_SIZE = 1024*1024*1024;
     const SUPPORTED_TYPES = ['image/png', 'image/jpg'];
     const UPLOAD_DIRECTORY = '/../public/uploads/';
 

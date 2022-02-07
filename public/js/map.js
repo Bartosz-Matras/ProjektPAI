@@ -46,7 +46,6 @@ function displayPlaces(places){
 
 map.on('click', (e) => {
     const data = (e.lngLat.wrap());
-    // console.log(data);
     document.getElementById("coordinates-input").value = `{\"point\": [${data.lng}, ${data.lat}]}`;
     document.getElementById("coordinates-input2").value = `{\"point\": [${data.lng}, ${data.lat}]}`;
 

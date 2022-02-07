@@ -290,7 +290,7 @@ section.project{
 
 #project-1{
     width: 36vw;
-    height: 34vh;
+    height: 40vh;
     
     margin-top: 1vh;
 
@@ -303,7 +303,7 @@ section.project{
 
 .image {
     width: 36vw;
-    height: 16vh;
+    height: 24vh;
 
     border-radius: 2em 2em 0 0;
 
@@ -383,6 +383,8 @@ img[src="public/img/first.svg"]{
 
 }
 
+
+
 .marker {
     background-image: url("../img/marker.svg");
     background-size: cover;
@@ -392,20 +394,16 @@ img[src="public/img/first.svg"]{
     cursor: pointer;
 }
 
-/*.mapboxgl-popup {*/
-/*    max-width: 100vw;*/
-/*    max-height: 100vh;*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*    flex-direction: column;*/
-/*}*/
-
 .mapboxgl-popup-content {
     max-width: 20vw;
     max-height: 40vh;
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: transparent linear-gradient(
+            180deg
+            , #FDCA40 0%, #F79824 100%) 0 0 no-repeat padding-box;;
+    border-radius: 2em;
 }
 
 
@@ -425,20 +423,17 @@ img[src="public/img/first.svg"]{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1vh;
     width: 8vw;
     height: 4vh;
 }
 
 .pin-info-h1 > h1{
-    font-size: 2em;
-    padding-bottom: 2vh;
-    padding-top: 2vh;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
 .pin-info-p{
-    font-size: 1.2em;
+    font-size: 1em;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -446,6 +441,12 @@ img[src="public/img/first.svg"]{
     width: 10vw;
     height: 20vh;
     margin-top: 1vh;
+}
+
+
+.pin-image{
+    height: 20vh;
+    width: 20vw;
 }
 
 #map>.pin-2{
@@ -466,26 +467,6 @@ button[name='add-pin-2']{
 }
 
 button[name='add-pin']{
-    width: 3vw;
-    height: 3vw;
-
-    position: relative;
-    top: 1em;
-    left: 1em;
-    z-index: 1;
-}
-
-
-#map > .local{
-    width: 3vw;
-    height: 3vw;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 1em;
-}
-
-button[name='localization'] {
     width: 3vw;
     height: 3vw;
 
@@ -1415,6 +1396,73 @@ button[name="button-cancel"]:hover{
         border-radius: 0;
     }
 
+    .marker {
+        background-image: url("../img/marker.svg");
+        background-size: cover;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .mapboxgl-popup-content {
+        min-width: 40vw;
+        min-height: 20vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: transparent linear-gradient(
+                180deg
+                , #FDCA40 0%, #F79824 100%) 0 0 no-repeat padding-box;;
+        border-radius: 2em;
+    }
+
+
+    .mapboxgl-popup-close-button{
+        font-size: 4em;
+        color: black;
+        font-weight: bold;
+        border: none;
+    }
+
+    .mapboxgl-popup-close-button:hover{
+        color: #B60036;
+    }
+
+
+    .pin-info-h1{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40vw;
+        height: 5vh;
+    }
+
+    .pin-info-h1 > h1{
+        font-size: 3.5em;
+        font-weight: bold;
+    }
+
+    .pin-info-p{
+        font-size: 2.5em;
+        line-height: 1.5vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        font-family: "Times New Roman", serif;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        width: 40vw;
+        height: 15vh;
+        margin-top: 1vh;
+    }
+
+
+    .pin-image{
+        height: 20vh;
+        width: 20vw;
+    }
+
 
     #map>.pin{
         display: none;
@@ -1456,14 +1504,6 @@ button[name="button-cancel"]:hover{
     }
 
 
-
-    #map > .local{
-        display: none;
-    }
-
-    button[name='localization'] {
-        display: none;
-    }
 
     .account-div{
         display: none;

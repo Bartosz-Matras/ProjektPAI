@@ -23,7 +23,7 @@ class SecurityController extends AppController
        }
 
         $login = $_POST["login"];
-        $password = md5($_POST["password"]);
+        $password = md5(md5($_POST["password"]));
 
 
         $user = $this -> userRepository -> getUser($login);
@@ -77,7 +77,7 @@ class SecurityController extends AppController
             return $this->render('login', ['messages' => ['Login, Password, Email can\'t be null']]);
         }
 
-        $user = new User($login, md5($haslo), $email, $imie, $nazwisko, $numerTelefonu);
+        $user = new User($login, md5(md5($haslo)), $email, $imie, $nazwisko, $numerTelefonu);
 
         $this -> userRepository -> addUser($user);
 

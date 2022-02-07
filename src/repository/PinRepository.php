@@ -78,7 +78,11 @@ class PinRepository extends Repository {
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
         }else{
-            $searchString = '%' . strtolower($searchString) . '%';
+            if (empty($searchString)){
+                $searchString = '';
+            }else{
+                $searchString = '%' . strtolower($searchString) . '%';
+            }
 
             $stmt = $this->database->connect()->prepare('
                 select distinct pins.*  from pins join pins_tags pt on pins."idPin" = pt.id_pin
@@ -86,7 +90,7 @@ class PinRepository extends Repository {
             ');
 
             $stmt->bindParam(':search', $searchString, PDO::PARAM_STR);
-            $stmt->bindParam(':tags', $tags[0], PDO::PARAM_STR);
+            $stmt->bindParam(':tags', $tags[0], PDO::PARAM_INT);
             $stmt->execute();
 
             return $stmt->fetchAll(PDO::FETCH_ASSOC);

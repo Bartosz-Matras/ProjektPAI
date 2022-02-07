@@ -57,7 +57,11 @@ search2.addEventListener("keyup", function (event){
     if(event.key == "Enter"){
         event.preventDefault();
 
-        const data = {search: this.value};
+        const tags = [...document.querySelectorAll('.profile2-filters-div input')]
+            .filter(checkbox => checkbox.checked)
+            .map(checkbox => checkbox.id);
+
+        const data = {search: this.value, tags};
 
         fetch("/search", {
             method: 'POST',

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <script src="https://kit.fontawesome.com/3ee6bedd82.js" crossorigin="anonymous"></script>
     <script src="public/js/map.js" crossorigin="anonymous" defer></script>
     <script src="public/js/functions.js" crossorigin="anonymous" defer></script>
@@ -20,6 +19,7 @@
     <!-- MAPBOX LIBRARY CDN -->
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.0/mapbox-gl.css' rel='stylesheet'/>
+    <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <title>Document</title>
 </head>
 <body>
@@ -50,13 +50,16 @@
             </div>
 
             <div class="profile">
+                <?php
+                    $userSession = Session::getInstance();
+                ?>
                 <button name="circle" onclick="showAccountDiv()" >
                     <span class="profile-icon" style="color:white;">
                         <i class="fas fa-user-tie fa-2x"></i>
                     </span>
                 </button>
                 <div class="name">
-                    Bartek
+                    <?= $userSession->name ?>
                 </div>
             </div>
 
@@ -113,7 +116,7 @@
                             <?php foreach ($tags as $tag): ?>
                             <label class="container2">
                                 <?= $tag->getTagName(); ?>
-                                <input type="checkbox">
+                                <input type="checkbox" class="radio" name="tag" id="<?= $tag->getIdTag(); ?>">
                                 <span class="checkmark"></span>
                             </label>
                             <?php endforeach ?>
@@ -155,11 +158,6 @@
                         <div class="pin-2">
                             <button name="add-pin-2" onclick="showAddPinDiv2()">
                                 <i class="fas fa-plus-square"></i>
-                            </button>
-                        </div>
-                        <div class="local">
-                            <button name="localization">
-                                <i class="fas fa-location-arrow fa-2x"></i>
                             </button>
                         </div>
                     </div>
